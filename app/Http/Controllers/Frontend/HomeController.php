@@ -17,7 +17,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $sliders = Slider::where("isActive", 1)->get();
+        $sliders = Slider::where("isActive", 1)->latest('updated_at')->get();
         $parts = MainPage::where('status', 1)->get();
         $references = Reference::where('status', 1)->take(3)->get();
         $blogs = Blog::where('status', 1)->where('is_main_page', 1)->take(4)->get();

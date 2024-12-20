@@ -52,7 +52,7 @@
                         <img src="{{image(setting('favicon'))}}" class="p-3" style="width: 50px; height: 50px">
                     </div>
                 </div>
-
+                {{--
                 <div class="fv-row mb-7">
                     <!--begin::Label-->
                     <label class="required fs-6 fw-semibold mb-2">Video Kapak Görseli (1260 × 500) <a href="{{image(setting('main_page_video_cover_image'))}}" target="_blank">Görüntüle</a></label>
@@ -62,6 +62,7 @@
                     <!--end::Input-->
                     <img src="{{image(setting('main_page_video_cover_image'))}}" style="width: 250px; height: 100px">
                 </div>
+                --}}
                 <div class="fv-row mb-7">
                     <!--begin::Label-->
                     <label class="required fs-6 fw-semibold mb-2">Video Linki</label>

@@ -1,8 +1,26 @@
-<!-- ***** JAVASCRIPTS ***** -->
-<script src="/frontend/assets/plugins/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBi4SV0ZRVGoIDH2E00YtJ8Gvg67eaPG5A"></script>
-<script src="/frontend/assets/plugins/plugins.js"></script>
-<script src="/frontend/assets/js/functions.min.js"></script>
+<script src="/frontend/assets/js/jquery-3-7-1.min.js"></script>
+<script src="/frontend/assets/js/bootstrap.min.js"></script>
+<script src="/frontend/assets/js/aos.js"></script>
+<script src="/frontend/assets/js/fontawesome.js"></script>
+<script src="/frontend/assets/js/mobile-menu.js"></script>
+<script src="/frontend/assets/js/jquery.magnific-popup.js"></script>
+<script src="/frontend/assets/js/owl.carousel.min.js"></script>
+<script src="/frontend/assets/js/jquery.countup.js"></script>
+<script src="/frontend/assets/js/slick-slider.js"></script>
+<script src="/frontend/assets/js/gsap.min.js"></script>
+<script src="/frontend/assets/js/jquery.nice-select.js"></script>
+<script src="/frontend/assets/js/ScrollTrigger.min.js"></script>
+<script src="/frontend/assets/js/Splitetext.js"></script>
+<script src="/frontend/assets/js/SmoothScroll.js"></script>
+<script src="/frontend/assets/js/text-animation.js"></script>
+<script src="/frontend/assets/js/switchmode.js"></script>
+<script src="/frontend/assets/js/swiper.js"></script>
+<script src="/frontend/assets/js/jquery.lineProgressbar.js"></script>
+<script src="/frontend/assets/js/tilt.jquery.js"></script>
+<script src="/frontend/assets/js/animation.js"></script>
+<script src="/frontend/assets/js/main.js"></script>
+
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>

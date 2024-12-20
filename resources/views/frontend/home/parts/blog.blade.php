@@ -1,35 +1,29 @@
-<!-- Blog section -->
-<div class="section">
+<div class="others2" style="background-image: url(assets/img/bg/others2-bg.png);">
     <div class="container">
-        <div class="mb-5">
-            <div class="row align-items-end">
-                <div class="col-12 col-sm-6">
-                    <h2 class="m-0">{{__('Bloglarımız')}}</h2>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="heading">
+                    <span class="span" data-aos="zoom-in-left" data-aos-duration="700">Available mobile app</span>
+                    <h2 class="text-anime-style-3">Download Mobile app</h2>
+                    <div class="space16"></div>
+                    <p data-aos="fade-right" data-aos-duration="800">Unlock immediate access to the future of blockchain
+                        investments with our mobile application. Effortlessly manage your portfolio, stay informed with real-time
+                        updates, and connect with the Angel Investors Club network, all within a secure, high performance platform
+                        designed for optimal user experience.
+                    </p>
+
+                    <div class="space30"></div>
+                    <div class="buttons" data-aos="fade-right" data-aos-duration="1000">
+                        <a href="#"><img src="assets/img/others/others2-btn1.png" alt=""></a>
+                        <a href="#"><img src="assets/img/others/others2-btn2.png" alt=""></a>
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 text-sm-end">
-                    <a class="button-text-1" href="{{route('blog.index')}}">{{ __('Tüm Bloglar') }}</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="main-image" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="100">
+                    <img src="assets/img/others/others2-main-img.png" alt="">
                 </div>
             </div>
         </div>
-        <div class="owl-carousel owl-nav-overlap" data-owl-nav="true" data-owl-margin="30" data-owl-xs="1" data-owl-sm="1" data-owl-md="1" data-owl-lg="2" data-owl-xl="2" data-owl-autoPlay="true">
-            @foreach($blogs as $blog)
-                <div class="hoverbox-4 bottom border-radius">
-                    <img src="{{image($blog->image)}}" alt="">
-                    <div class="content">
-                        <h5>{{$blog->getName()}}</h5>
-                        <p>
-                           {!! \Illuminate\Support\Str::limit(strip_tags($blog->getContent()), 180) !!}
-                        </p>
-                    </div>
-                    <div class="hover-content">
-                        <a class="button button-lg button-outline-white button-rounded" href="{{route('blog.detail', $blog->getSlug())}}">{{ __('İncele') }}</a>
-                    </div>
-                </div>
-            @endforeach
-            <!-- Blog post -->
-
-
-        </div>
-    </div><!-- end container -->
+    </div>
 </div>
-<!-- end Blog section -->

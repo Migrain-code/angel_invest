@@ -64,13 +64,16 @@
         <!--begin::Card-->
         <div class="card">
             <!--begin::Card header-->
-            <div class="card-header">
+            <div class="card-header d-flex align-items-center">
                 <div class="card-title">Dil Düzenle</div>
-
+                <button type="button" onclick="$('#kt_modal_add_faq_form').submit()" id="kt_modal_add_faq_submit" class="btn btn-primary">
+                    <span class="indicator-label">Dil Ayarlarını Kayıt Et</span>
+                </button>
             </div>
             <!--end::Card header-->
             <!--begin::Card body-->
             <div class="card-body pt-0">
+
                 <form class="form" action="{{route('admin.language.update', $language->id)}}" method="post" id="kt_modal_add_faq_form" enctype="multipart/form-data" data-kt-redirect="">
                     @method('PUT')
                     <!--begin::Modal body-->
