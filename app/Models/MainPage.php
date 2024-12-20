@@ -9,7 +9,9 @@ use Spatie\Translatable\HasTranslations;
 class MainPage extends Model
 {
     use HasFactory, HasTranslations;
-    protected $translatable = ['title', 'description', 'box_1_title', 'box_1_counter', 'box_2_title','box_2_counter','box_3_title','box_3_counter'];
+    protected $translatable = ['title', 'description', 'box_1_title',
+        'box_1_counter', 'box_2_title','box_2_counter','box_3_title',
+        'box_3_counter', 'box_1_icon', 'box_2_icon', 'box_3_icon'];
 
     public function getTitle()
     {
@@ -55,5 +57,20 @@ class MainPage extends Model
     public function getBox3Counter()
     {
         return $this->translate('box_3_counter');
+    }
+
+    public function getBox1Icon()
+    {
+        return image($this->translate('box_1_icon'));
+    }
+
+    public function getBox2Icon()
+    {
+        return image($this->translate('box_2_icon'));
+    }
+
+    public function getBox3Icon()
+    {
+        return image($this->translate('box_3_icon'));
     }
 }

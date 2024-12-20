@@ -11,18 +11,7 @@ class Reference extends Model
     use HasTranslations;
 
     public $translatable = ['name', 'slug', 'meta_title', 'meta_description', 'description', 'content'];
-    public function category()
-    {
-        return $this->hasOne(ReferenceCategory::class, 'id', 'category_id');
-    }
-    public function images()
-    {
-        return $this->hasMany(ReferenceImage::class, 'reference_id', 'id');
-    }
-    public function products()
-    {
-        return $this->hasMany(ReferenceProduct::class, 'reference_id', 'id');
-    }
+
     public function getName()
     {
         return $this->translate('name');

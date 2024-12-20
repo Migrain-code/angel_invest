@@ -16,7 +16,8 @@
         <textarea class="form-control form-control-solid" rows="7" placeholder="" name="short_description[{{$row->code}}]">{{$reference->getTranslation('description', $row->code)}}</textarea>
         <!--end::Input-->
     </div>
-    <div class="fv-row mb-7">
+    {{--
+        <div class="fv-row mb-7">
         <!--begin::Label-->
         <label class="required fs-6 fw-semibold mb-2">Seo Başlığı</label>
         <!--end::Label-->
@@ -42,4 +43,5 @@
         <textarea id="kt_docs_tinymce_plugins" name="technic[{{$row->code}}]" class="tox-target tinyMiceEditor">{{$reference->getTranslation('content', $row->code)}}</textarea>
         <!--end::Input-->
     </div>
+    --}}
 </div>

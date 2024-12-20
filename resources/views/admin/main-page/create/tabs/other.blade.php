@@ -10,7 +10,7 @@
     </div>
     <div class="fv-row mb-7">
         <!--begin::Label-->
-        <label class="required fs-6 fw-semibold mb-2">Görsel Ne Tarafta Olsun</label>
+        <label class="required fs-6 fw-semibold mb-2">Ana Görsel Ne Tarafta Olsun</label>
         <!--end::Label-->
         <!--begin::Input-->
         <select name="image_rotation" class="form-select">

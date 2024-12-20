@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'Referans Düzenle')
+@section('title', 'Nasıl Çalışır Alanı Düzenle')
 @section('styles')
     <style>
         .nav-line-tabs .nav-item .nav-link {
@@ -26,7 +26,7 @@
 @endsection
 @section('breadcrumb')
     <!--begin::Title-->
-    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Referans Düzenle</h1>
+    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Nasıl Çalışır Alanı Düzenle</h1>
     <!--end::Title-->
     <!--begin::Breadcrumb-->
     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -53,7 +53,7 @@
         <li class="breadcrumb-item text-muted"></li>
         <!--end::Item-->
         <li class="breadcrumb-item text-muted">
-            <a href="{{route('admin.reference.index')}}" class="text-muted text-hover-primary">Referanslar</a>
+            <a href="{{route('admin.reference.index')}}" class="text-muted text-hover-primary">Nasıl Çalışır Alanları</a>
         </li>
         <!--end::Item-->
         <!--begin::Item-->
@@ -62,7 +62,7 @@
         </li>
 
         <li class="breadcrumb-item text-muted">
-           Referans Düzenle
+           Nasıl Çalışır Alanı Düzenle
         </li>
     </ul>
     <!--end::Breadcrumb-->
@@ -75,7 +75,7 @@
         <div class="card">
             <!--begin::Card header-->
             <div class="card-header">
-                <div class="card-title">Referans Düzenle</div>
+                <div class="card-title">Nasıl Çalışır Alanı Düzenle</div>
 
             </div>
             <!--end::Card header-->
@@ -91,7 +91,7 @@
                             <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
                                 @foreach($languages as $row)
                                     <li class="nav-item">
-                                        <a class="nav-link @if($loop->first) active @endif" data-bs-toggle="tab" href="#kt_tab_pane_{{$row->code}}">Referans Bilgileri ({{$row->name}})</a>
+                                        <a class="nav-link @if($loop->first) active @endif" data-bs-toggle="tab" href="#kt_tab_pane_{{$row->code}}">Nasıl Çalışır Alanı Bilgileri ({{$row->name}})</a>
                                     </li>
                                 @endforeach
                                     <li class="nav-item">

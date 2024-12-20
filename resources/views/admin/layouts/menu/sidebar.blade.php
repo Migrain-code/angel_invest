@@ -325,7 +325,7 @@
                         <span class="menu-icon">
                             <i class="fa fa-toolbox"></i>
                         </span>
-                        <span class="menu-title">Referanslar</span>
+                        <span class="menu-title">Nasıl Çalışır</span>
                     </a>
                     <!--end:Menu link-->
                 </div>

@@ -2,7 +2,7 @@
 
     <div class="fv-row mb-7">
         <!--begin::Label-->
-        <label class="required fs-6 fw-semibold mb-2">Referans Adı</label>
+        <label class="required fs-6 fw-semibold mb-2">Nasıl Çalışır Alanı Adı</label>
         <!--end::Label-->
         <!--begin::Input-->
         <input type="text" class="form-control form-control-solid" placeholder="" name="title[{{$row->code}}]" value="" />
@@ -10,12 +10,13 @@
     </div>
     <div class="fv-row mb-7">
         <!--begin::Label-->
-        <label class="required fs-6 fw-semibold mb-2">Referans Açıklaması</label>
+        <label class="required fs-6 fw-semibold mb-2">Nasıl Çalışır Alanı Açıklaması</label>
         <!--end::Label-->
         <!--begin::Input-->
         <textarea class="form-control form-control-solid" rows="7" placeholder="" name="short_description[{{$row->code}}]"></textarea>
         <!--end::Input-->
     </div>
+    {{--
     <div class="fv-row mb-7">
         <!--begin::Label-->
         <label class="required fs-6 fw-semibold mb-2">Seo Başlığı</label>
@@ -42,4 +43,5 @@
         <textarea id="kt_docs_tinymce_plugins" name="technic[{{$row->code}}]" class="tox-target tinyMiceEditor"></textarea>
         <!--end::Input-->
     </div>
+    --}}
 </div>

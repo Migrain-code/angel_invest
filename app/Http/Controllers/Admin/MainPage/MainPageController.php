@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin\MainPage;
 
 use App\Http\Controllers\Controller;
+use App\Models\Language;
 use App\Models\MainPage;
-use App\Models\Slider;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -31,26 +31,46 @@ class MainPageController extends Controller
      */
     public function store(Request $request)
     {
+      //  $request->dd();
         $mainPage = new MainPage();
         $mainPage->title = $request->title;
-        $mainPage->description = $request->descriptions;
+        //$mainPage->description = $request->descriptions;
+        $languages = Language::orderBy('id', 'asc')->take(2)->get(); // İşlem yapmak istediğiniz diller
+
+
         foreach (range(1, 3) as $item) {
             $mainPage->{'box_' . $item . '_title'} = $request->{'box_' . $item . '_title'};
         }
         foreach (range(1, 3) as $item) {
             $mainPage->{'box_' . $item . '_counter'} = $request->{'box_' . $item . '_counter'};
         }
+
+        foreach (range(1, 3) as $item) {
+            $paths = [];
+            $itemFile = $request->{'box_' . $item . '_icon'};
+            foreach ($languages as $language) {
+                if (isset($itemFile[$language->code])) {
+                    $storagePath = $itemFile[$language->code]->store('mainPageIcons');
+                    $paths[$language->code] = $storagePath;
+                }
+            }
+
+            $mainPage->{'box_' . $item . '_icon'} = $paths;
+
+        }
+
         $mainPage->image_rotation = $request->image_rotation ?? 0;
         if ($request->hasFile('image')) {
             $mainPage->image = $request->file('image')->store('mainPageImages');
         }
+
         if ($mainPage->save()) {
-            return to_route('admin.main-page.index',)->with('response',[
+            return to_route('admin.main-page.index')->with('response', [
                 'status' => "success",
                 'message' => "Alan Başarılı Bir Şekilde Eklendi"
             ]);
         } else {
-            return to_route('admin.main-page.index',)->with('response',[
+            return to_route('admin.main-page.index')->with('response', [
                 'status' => "warning",
                 'message' => "Alan Bir Hata Sebebi İle Eklenemedi"
             ]);
@@ -73,23 +93,38 @@ class MainPageController extends Controller
     {
         $mainPage->title = $request->title;
         $mainPage->description = $request->descriptions;
+        $languages = Language::orderBy('id', 'asc')->take(2)->get(); // İşlem yapmak istediğiniz diller
+
         foreach (range(1, 3) as $item) {
             $mainPage->{'box_' . $item . '_title'} = $request->{'box_' . $item . '_title'};
         }
         foreach (range(1, 3) as $item) {
             $mainPage->{'box_' . $item . '_counter'} = $request->{'box_' . $item . '_counter'};
         }
+        foreach (range(1, 3) as $item) {
+            $paths = [];
+            $itemFile = $request->{'box_' . $item . '_icon'};
+            if (isset($itemFile)) {
+                foreach ($languages as $language) {
+                    if (isset($itemFile[$language->code])) {
+                        $storagePath = $itemFile[$language->code]->store('mainPageIcons');
+                        $paths[$language->code] = $storagePath;
+                    }
+                }
+                $mainPage->{'box_' . $item . '_icon'} = $paths;
+            }
+        }
         $mainPage->image_rotation = $request->image_rotation ?? 0;
         if ($request->hasFile('image')) {
             $mainPage->image = $request->file('image')->store('mainPageImages');
         }
         if ($mainPage->save()) {
-            return to_route('admin.main-page.index',)->with('response',[
+            return to_route('admin.main-page.index')->with('response', [
                 'status' => "success",
                 'message' => "Alan Başarılı Bir Şekilde Eklendi"
             ]);
         } else {
-            return to_route('admin.main-page.index',)->with('response',[
+            return to_route('admin.main-page.index')->with('response', [
                 'status' => "warning",
                 'message' => "Alan Bir Hata Sebebi İle Eklenemedi"
             ]);
@@ -105,7 +140,7 @@ class MainPageController extends Controller
                 return createCheckbox($q->id, 'MainPage', 'Bölümleri');
             })
             ->editColumn('title', function ($q) {
-                return $q->getTitle();
+                return 'Alan '.$q->id;
             })
             ->editColumn('image', function ($q) {
                 return html()->img(image($q->image))->style('width:35px;height:35px;border-radius:50%;object-fit:cover;object-position:center;');

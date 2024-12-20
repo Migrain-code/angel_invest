@@ -1,11 +1,11 @@
 @extends('admin.layouts.master')
-@section('title', 'Referanslar')
+@section('title', 'Nasıl Çalışır')
 @section('styles')
 
 @endsection
 @section('breadcrumb')
     <!--begin::Title-->
-    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Referanslar</h1>
+    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Nasıl Çalışır</h1>
     <!--end::Title-->
     <!--begin::Breadcrumb-->
     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -27,7 +27,7 @@
         </li>
         <!--end::Item-->
         <!--begin::Item-->
-        <li class="breadcrumb-item text-muted">Referanslar</li>
+        <li class="breadcrumb-item text-muted">Nasıl Çalışır</li>
         <!--end::Item-->
     </ul>
     <!--end::Breadcrumb-->
@@ -52,7 +52,7 @@
                                 <input class="form-check-input delete" type="checkbox" data-kt-check="true" data-kt-check-target="#datatable .delete" value="1" />
                             </div>
                         </th>
-                        <th class="min-w-125px">Referans Adı</th>
+                        <th class="min-w-125px">Başlık</th>
                         <th class="min-w-125px">Durum</th>
                         <th class="min-w-125px">Seo Başlığı</th>
                         <th class="min-w-125px">Created Date</th>
