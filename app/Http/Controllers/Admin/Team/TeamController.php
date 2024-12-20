@@ -31,16 +31,18 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        //$request->dd();
         $team = new Team();
         $team->mission = $request->title;
         $team->name = $request->name;
+        $team->socials = $request->social;
         if ($request->hasFile('image')) {
             $team->image = $request->file('image')->store('manageImages');
         }
         if ($team->save()) {
             return to_route('admin.team.index')->with('response', [
                 'status' => "success",
-                'message' => 'Yönetim Kurulu Üyesi Eklendi'
+                'message' => 'Ekip Üyesi Eklendi'
             ]);
         }
     }
@@ -58,15 +60,17 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
+
         $team->mission = $request->title;
         $team->name = $request->name;
+        $team->socials = $request->social;
         if ($request->hasFile('image')) {
             $team->image = $request->file('image')->store('manageImages');
         }
         if ($team->save()) {
             return to_route('admin.team.index')->with('response', [
                 'status' => "success",
-                'message' => 'Yönetim Kurulu Üyesi Güncellendi'
+                'message' => 'Ekip Üyesi Güncellendi'
             ]);
         }
     }

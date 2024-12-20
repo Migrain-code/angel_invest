@@ -38,7 +38,7 @@ class BlogController extends Controller
         $blog->meta_title = $request->meta_title;
         $blog->meta_description = $request->meta_description;
         $blog->content = $request->meta_content;
-        $blog->category_id = $request->category_id;
+        //$blog->category_id = $request->category_id;
         $slugs = [];
         foreach ($request->title as $locale => $title) {
             $slugs[$locale] = Str::slug($title);
@@ -75,7 +75,7 @@ class BlogController extends Controller
         $blog->meta_title = $request->meta_title;
         $blog->meta_description = $request->meta_description;
         $blog->content = $request->meta_content;
-        $blog->category_id = $request->category_id;
+       // $blog->category_id = $request->category_id;
 
         $slugs = [];
         foreach ($request->title as $locale => $title) {

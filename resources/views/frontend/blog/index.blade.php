@@ -2,60 +2,103 @@
 @php
     $title = trans("Tüm Bloglar");
     $description = trans("Tüm Bloglar");
-    if (isset($category)){
-        $title = $category->getMetaTitle();
-        $description = $category->getMetaDescription();
-        $image = $category->image;
-    } else{
-        $image = $categories->first()->image;
-    }
 @endphp
 @section('title', $title)
 @section('description', $description)
+@section('styles')
+    <style>
+        .pagination.page-item{
+            display: inline-block;
+        }
+        .page-link{
+            width: 55px;
+            height: 55px;
+            text-align: center;
+            line-height: 45px;
+            background-color: var(--vtc-bg-common-bg1);
+            margin: 0 4px;
+            transition: all 0.3s;
+            display: block;
+            color: #000 !important;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .page-item:last-child .page-link {
+            border-top-right-radius: var(--bs-pagination-border-radius);
+            border-bottom-right-radius: var(--bs-pagination-border-radius);
+            font-size: 30px;
+            line-height: 40px;
+        }
+        .page-item:first-child .page-link {
+            border-top-left-radius: var(--bs-pagination-border-radius);
+            border-bottom-left-radius: var(--bs-pagination-border-radius);
+            font-size: 30px;
+            line-height: 40px;
+        }
+        .active>.page-link, .page-link.active {
+            border-radius: 4px;
+            background: var(--vtc-bg-main-bg-1);
+            transition: all 0.3s;
+            color: #fff !important;
+        }
+    </style>
+@endsection
 @section('content')
 
-    <!-- end Header -->
-    <div class="section-xl bg-image parallax section-divider-curve-bottom" data-bg-src="{{image($image)}}">
-        <div class="bg-dark-06">
-            <div class="container text-center">
-                <h1 class="fw-normal m-0">{{__('Tüm Bloglar')}}</h1>
-                <ul class="list-inline-dash">
-                    <li><a href="/">{{__('Anasayfa')}}</a></li>
-                    <li><a href="{{route('blog.index')}}">{{__('Tüm Bloglar')}}</a></li>
-                    @if(isset($category))
-                        <li><a href="{{route('blog.category', $category->getSlug())}}">{{$category->getName()}}</a></li>
-                    @endif
-                </ul>
-            </div><!-- end container -->
-        </div>
-    </div>
-    <!-- Blog section  -->
-    <div class="section">
+
+
+    <!--=====HERO AREA START=======-->
+    <div class="common-hero" style="background-image: url(/frontend/assets/img/bg/hero2-bg.png);">
         <div class="container">
-            <div class="row g-5">
-                <!-- Blog Posts -->
-                @include('frontend.blog.parts.list')
-                <!-- end Blog Posts -->
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="main-heading">
+                        <h1 class="text-white">Blog</h1>
+                        <div class="space16"></div>
+                        <p class="text-white">
+                            Angel Investors Club is a revolutionary platform designed to create a direct channel for
+                            angel investors and promising crypto projects. Our mission is to create a trusted and
+                            efficient ecosystem where visionary project owners and forward thinking investors come
+                            together to build the future of blockchain innovation.
+                        </p>
 
-                <!-- Blog Sidebar -->
-                <div class="col-12 col-lg-4 d-none d-lg-block">
-
-                    @include('frontend.blog.parts.category')
-                    <!-- Sidebar box 3 - Popular Posts -->
-                    @include('frontend.blog.parts.popular')
-                    <!-- Sidebar box 6 - Facebook Like box -->
-                    <div class="border p-4 mb-4 text-center">
-                        <h6 class="font-small fw-medium uppercase mb-4">{{__('Takip Edin')}}</h6>
-                        <ul class="list-inline">
-                            <li><a href="{{setting('speed_facebook_url')}}"><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="{{setting('speed_twitter_url')}}"><i class="bi bi-twitter-x"></i></a></li>
-                            <li><a href="{{setting('speed_instagram_url')}}"><i class="bi bi-instagram"></i></a></li>
-                        </ul>
                     </div>
                 </div>
-                <!-- end Blog Sidebar -->
-            </div><!-- end row -->
-        </div><!-- end container -->
+
+                <div class="col-lg-7">
+                    <div class="common-hero-images">
+                        <div class="image1">
+                            <img src="assets/img/about/common-hero-coin.png" alt="">
+                        </div>
+
+                        <div class="image2">
+                            <img src="assets/img/about/about-hero-area.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- end Blog section -->
+    <!--=====HERO AREA END=======-->
+
+    <!--===== BLOG AREA START =======-->
+    <div class="blog-page sp ">
+        <div class="container">
+            <div class="row">
+                @foreach($blogs as $blog)
+                    <x-blog-card :blog="$blog" />
+                @endforeach
+
+
+            </div>
+
+            <div class="space40"></div>
+            <div class="d-flex justify-content-center align-items-center">
+                    {!! $blogs->links() !!}
+            </div>
+
+        </div>
+    </div>
+
 @endsection

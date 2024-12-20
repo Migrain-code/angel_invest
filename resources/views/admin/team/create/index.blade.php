@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'Yönetim Kurulu Üyesi Ekle')
+@section('title', 'Ekip Üyesi Ekle')
 @section('styles')
     <style>
         .nav-line-tabs .nav-item .nav-link {
@@ -16,7 +16,7 @@
 @endsection
 @section('breadcrumb')
     <!--begin::Title-->
-    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Yönetim Kurulu Üyesi Ekle</h1>
+    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Ekip Üyesi Ekle</h1>
     <!--end::Title-->
     <!--begin::Breadcrumb-->
     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -43,7 +43,7 @@
         <li class="breadcrumb-item text-muted"></li>
         <!--end::Item-->
         <li class="breadcrumb-item text-muted">
-            <a href="{{route('admin.team.index')}}" class="text-muted text-hover-primary">Yönetim Kurulu</a>
+            <a href="{{route('admin.team.index')}}" class="text-muted text-hover-primary">Ekip</a>
         </li>
         <!--end::Item-->
         <!--begin::Item-->
@@ -52,7 +52,7 @@
         </li>
 
         <li class="breadcrumb-item text-muted">
-           Yönetim Kurulu Üyesi Ekle
+           Ekip Üyesi Ekle
         </li>
     </ul>
     <!--end::Breadcrumb-->
@@ -65,7 +65,7 @@
         <div class="card">
             <!--begin::Card header-->
             <div class="card-header">
-                <div class="card-title">Yönetim Kurulu Üyesi Ekle</div>
+                <div class="card-title">Ekip Üyesi Ekle</div>
 
             </div>
             <!--end::Card header-->

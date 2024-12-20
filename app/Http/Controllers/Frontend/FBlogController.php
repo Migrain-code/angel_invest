@@ -11,10 +11,9 @@ class FBlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::where('status', 1)->paginate(5);
-        $categories = BlogCategory::where('status', 1)->has('blogs')->get();
-        $latestBlog = Blog::where('status', 1)->latest()->take(10)->get();
-        return view('frontend.blog.index', compact('blogs', 'categories', 'latestBlog'));
+        $blogs = Blog::where('status', 1)->paginate(9);
+       // $categories = BlogCategory::where('status', 1)->has('blogs')->get();
+        return view('frontend.blog.index', compact('blogs'));
     }
 
     public function detail($slug){

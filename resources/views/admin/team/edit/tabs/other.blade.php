@@ -16,5 +16,37 @@
         <input type="file" class="form-control form-control-solid" placeholder="" name="image" value="" />
         <!--end::Input-->
     </div>
+    <div class="fv-row mb-7">
+        <!--begin::Label-->
+        <label class="required fs-6 fw-semibold mb-2">Facebook</label>
+        <!--end::Label-->
+        <!--begin::Input-->
+        <input type="text" class="form-control form-control-solid" placeholder="" name="social[facebook]" value="{{$team->socials["facebook"] ?? ""}}" />
+        <!--end::Input-->
+    </div>
 
+    <div class="fv-row mb-7">
+        <!--begin::Label-->
+        <label class="required fs-6 fw-semibold mb-2">Instagram</label>
+        <!--end::Label-->
+        <!--begin::Input-->
+        <input type="text" class="form-control form-control-solid" placeholder="" name="social[instagram]" value="{{$team->socials["instagram"] ?? ""}}" />
+        <!--end::Input-->
+    </div>
+    <div class="fv-row mb-7">
+        <!--begin::Label-->
+        <label class="required fs-6 fw-semibold mb-2">Twitter</label>
+        <!--end::Label-->
+        <!--begin::Input-->
+        <input type="text" class="form-control form-control-solid" placeholder="" name="social[twitter]" value="{{$team->socials["twitter"] ?? ""}}" />
+        <!--end::Input-->
+    </div>
+    <div class="fv-row mb-7">
+        <!--begin::Label-->
+        <label class="required fs-6 fw-semibold mb-2">Linkedin</label>
+        <!--end::Label-->
+        <!--begin::Input-->
+        <input type="text" class="form-control form-control-solid" placeholder="" name="social[linkedin]" value="{{$team->socials["linkedin"] ?? ""}}" />
+        <!--end::Input-->
+    </div>
 </div>

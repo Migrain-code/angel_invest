@@ -170,7 +170,8 @@
 
                 </div>
                 <!--end:Menu Hakkımızda-->
-                <!--begin:Menu Kategoriler-->
+                {{---
+                     <!--begin:Menu Kategoriler-->
                 <div data-kt-menu-trigger="click"
                      class="menu-item menu-accordion
                      @if(request()->routeIs('admin.category.*') ||
@@ -278,6 +279,7 @@
                 </div>
                 <!--end:Menu Kategoriler-->
 
+                ---}}
                 <!--end:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
@@ -309,7 +311,8 @@
                     </a>
                     <!--end:Menu link-->
                 </div>
-                <div class="menu-item">
+                {{--
+                    <div class="menu-item">
                     <!--begin:Menu link-->
                     <a class="menu-link @if(request()->routeIs('admin.product.*')) active @endif" href="{{route('admin.product.index')}}">
                         <span class="menu-icon">
@@ -319,6 +322,7 @@
                     </a>
                     <!--end:Menu link-->
                 </div>
+                --}}
                 <div class="menu-item">
                     <!--begin:Menu link-->
                     <a class="menu-link @if(request()->routeIs('admin.reference.*')) active @endif" href="{{route('admin.reference.index')}}">
@@ -335,7 +339,7 @@
                         <span class="menu-icon">
                             <i class="fa fa-user-group"></i>
                         </span>
-                        <span class="menu-title">Yönetim Kurulu</span>
+                        <span class="menu-title">Ekip</span>
                     </a>
                     <!--end:Menu link-->
                 </div>

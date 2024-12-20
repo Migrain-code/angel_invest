@@ -20,9 +20,8 @@ class HomeController extends Controller
         $sliders = Slider::where("isActive", 1)->latest('updated_at')->get();
         $parts = MainPage::where('status', 1)->get();
         $references = Reference::where('status', 1)->take(3)->get();
-        $blogs = Blog::where('status', 1)->where('is_main_page', 1)->take(4)->get();
 
-        return view('frontend.home.index', compact('sliders', 'parts', 'blogs', 'references'));
+        return view('frontend.home.index', compact('sliders', 'parts', 'references'));
     }
 
     public function changeLanguage(Language $language)

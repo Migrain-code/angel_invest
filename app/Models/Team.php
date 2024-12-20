@@ -11,7 +11,7 @@ class Team extends Model
     use HasTranslations;
 
     protected $translatable = ['mission'];
-
+    protected $casts =['socials' => 'array'];
     public function getMission()
     {
         return $this->translate('mission');

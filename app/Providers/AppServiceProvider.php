@@ -53,6 +53,6 @@ class AppServiceProvider extends ServiceProvider
         $languages = Language::orderBy('id', 'asc')->take(2)->get();
         View::share('languages', $languages);
 
-        Paginator::useBootstrap();
+        Paginator::useBootstrapFour();
     }
 }

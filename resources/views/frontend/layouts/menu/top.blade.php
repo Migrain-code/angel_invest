@@ -22,7 +22,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="about.html">
+                                    <a href="{{route('about.index')}}">
                                         {{__('Hakkımızda')}}</a>
                                 </li>
 
@@ -40,15 +40,15 @@
                                         <li><a href="whitepaper.html">{{__('Whitepaper')}}</a></li>
                                         <li><a href="roadmap.html">{{__('Roadmap')}}</a></li>
                                         <li><a href="tokenomics.html">{{__('Tokenomics')}}</a></li>
-                                        <li><a href="team.html">{{__('Ekip')}}</a></li>
+                                        <li><a href="{{route('team')}}">{{__('Ekip')}}</a></li>
                                         <li><a href="info.html">{{__('Bilgi')}}</a></li>
-                                        <li><a href="contact.html">{{__('İletişim')}}</a></li>
+                                        <li><a href="{{route('contact.index')}}">{{__('İletişim')}}</a></li>
                                         <li><a href="faq.html">{{__('S.S.S')}}</a></li>
                                     </ul>
                                 </li>
 
                                 <li class="dropdown-menu-parrent">
-                                    <a href="blog.html" class="main1">
+                                    <a href="{{route('blog.index')}}" class="main1">
                                         {{__('Blog')}}
                                     </a>
                                 </li>

@@ -1,11 +1,11 @@
 @extends('admin.layouts.master')
-@section('title', 'Yönetim Kurulu')
+@section('title', 'Ekip')
 @section('styles')
 
 @endsection
 @section('breadcrumb')
     <!--begin::Title-->
-    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Yönetim Kurulu</h1>
+    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Ekip</h1>
     <!--end::Title-->
     <!--begin::Breadcrumb-->
     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -27,7 +27,7 @@
         </li>
         <!--end::Item-->
         <!--begin::Item-->
-        <li class="breadcrumb-item text-muted">Yönetim Kurulu</li>
+        <li class="breadcrumb-item text-muted">Ekip</li>
         <!--end::Item-->
     </ul>
     <!--end::Breadcrumb-->

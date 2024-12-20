@@ -20,6 +20,7 @@ class FContactController extends Controller
         $contactRequest->email = $request->get('email');
         $contactRequest->subject = $request->get('subject');
         $contactRequest->message = $request->get('message');
+        $contactRequest->phone = $request->get('phone');
         $contactRequest->ip_address = $request->ip();
         if ($contactRequest->save()) {
             return redirect()->route('contact.index')->with('response', [

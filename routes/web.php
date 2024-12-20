@@ -64,7 +64,7 @@ Route::prefix('job-request-form')->as('jobRequest.')->group(function () {
     Route::post('/form', [FJobRequestFormController::class, 'store'])->name('sendForm')/*->middleware('throttle:1,5')*/;
 });
 Route::get('/about', [FAboutController::class, 'index'])->name('about.index');
-Route::get('board-of-directors', [FAboutController::class, 'team'])->name('team');
+Route::get('team', [FAboutController::class, 'team'])->name('team');
 Route::get('videos', [FAboutController::class, 'video'])->name('video');
 Route::get('newspaper', [FAboutController::class, 'newspaper'])->name('newspaper');
 Route::get('kvkk', [HomeController::class, 'kvkk'])->name('kvkk.index'); //kvkk
@@ -106,7 +106,7 @@ Route::middleware('auth')->prefix('dashboard')->as('admin.')->group(function (){
     Route::resource('main-page',MainPageController::class);//Anasayfa Bölümleri
     Route::resource('contact-request',ContactRequestController::class);//Anasayfa Bölümleri
     Route::resource('reference', ReferenceController::class); //referanslar
-    Route::resource('team', TeamController::class); //yönetim kurulu
+    Route::resource('team', TeamController::class); //Ekip
     Route::resource('video', VideoController::class); //videolar
     Route::resource('newspaper', NewsPaperController::class); //videolar
     Route::resource('jobRequestForm', JobRequestFormController::class); //iş başvuruları
