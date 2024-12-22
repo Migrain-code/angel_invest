@@ -6,6 +6,7 @@ use App\Models\AboutGallery;
 use App\Models\DownloadableContent;
 use App\Models\NewsPaper;
 use App\Models\Reference;
+use App\Models\RoadMap;
 use App\Models\Team;
 use App\Models\Video;
 use Illuminate\Http\Request;
@@ -31,9 +32,9 @@ class FAboutController extends Controller
         return view('frontend.video.index', compact('videos'));
     }
 
-    public function newspaper()
+    public function roadmap()
     {
-        $newspapers = Newspaper::where('status', 1)->get();
-        return view('frontend.newspaper.index', compact('newspapers'));
+        $roadMaps = RoadMap::where('status', 1)->get();
+        return view('frontend.roadmap.index', compact('roadMaps'));
     }
 }

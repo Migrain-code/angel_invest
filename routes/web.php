@@ -35,6 +35,7 @@ use App\Http\Controllers\NewsPaperController;
 use App\Http\Controllers\SearchProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoadMapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +67,7 @@ Route::prefix('job-request-form')->as('jobRequest.')->group(function () {
 Route::get('/about', [FAboutController::class, 'index'])->name('about.index');
 Route::get('team', [FAboutController::class, 'team'])->name('team');
 Route::get('videos', [FAboutController::class, 'video'])->name('video');
-Route::get('newspaper', [FAboutController::class, 'newspaper'])->name('newspaper');
+Route::get('roadmap', [FAboutController::class, 'roadmap'])->name('roadmap');
 Route::get('kvkk', [HomeController::class, 'kvkk'])->name('kvkk.index'); //kvkk
 
 Route::prefix('search')->as('search.')->group(function () {
@@ -109,8 +110,12 @@ Route::middleware('auth')->prefix('dashboard')->as('admin.')->group(function (){
     Route::resource('team', TeamController::class); //Ekip
     Route::resource('video', VideoController::class); //videolar
     Route::resource('newspaper', NewsPaperController::class); //videolar
+    Route::resource('roadmap', RoadMapController::class); //videolar
     Route::resource('jobRequestForm', JobRequestFormController::class); //iş başvuruları
     Route::get('kvkk', [\App\Http\Controllers\Admin\HomeController::class, 'kvkk'])->name('kvkk.index'); //kvkk
+
+
+    Route::get('mobile-app', [\App\Http\Controllers\Admin\HomeController::class, 'mobileApp'])->name('mobileApp.index'); //mobileApp
 
     /*------------------------------Bloglar-----------------------------------*/
     Route::resource('blog-category', BlogCategoryController::class);
@@ -122,13 +127,13 @@ Route::middleware('auth')->prefix('dashboard')->as('admin.')->group(function (){
     Route::resource('about-gallery', AboutGalleryController::class);
     Route::resource('downloadable-content', DownloadableContentController::class);
     /*------------------------------Kategoriler-----------------------------------*/
-    Route::resource('category', CategoryController::class);
+  /*  Route::resource('category', CategoryController::class);
     Route::resource('subcategory', SubCategoryController::class);
     Route::resource('subCategorySon', SubCategorySonController::class);
     Route::resource('series', SeriesController::class);
     Route::resource('product', ProductController::class);
     Route::resource('reference-category', ReferenceCategoryController::class);
-    Route::resource('productionCategory', ProductionCategoryController::class);
+    Route::resource('productionCategory', ProductionCategoryController::class);*/
 
     /*------------------------------Ajax Commands-----------------------------------*/
     Route::controller(AjaxController::class)->as('ajax.')->prefix('ajax')->group(function () {

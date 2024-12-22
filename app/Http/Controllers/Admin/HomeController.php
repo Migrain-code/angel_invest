@@ -30,4 +30,9 @@ class HomeController extends Controller
     {
         return view('admin.home.kvkk');
     }
+
+    public function mobileApp()
+    {
+        return view('admin.mobile-app.index');
+    }
 }

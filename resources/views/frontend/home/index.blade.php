@@ -7,8 +7,8 @@
           @include('frontend.home.parts.product')
           --}}
           @include('frontend.home.parts.howitworks')
-          @include('frontend.home.parts.video')
-          @include('frontend.home.parts.blog')
+          @include('frontend.home.parts.roadmap')
+          @include('frontend.home.parts.mobile')
           @include('frontend.home.parts.comment')
           @include('frontend.home.parts.faq')
 

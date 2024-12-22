@@ -38,7 +38,7 @@
                                     </a>
                                     <ul>
                                         <li><a href="whitepaper.html">{{__('Whitepaper')}}</a></li>
-                                        <li><a href="roadmap.html">{{__('Roadmap')}}</a></li>
+                                        <li><a href="{{route('roadmap')}}">{{__('Roadmap')}}</a></li>
                                         <li><a href="tokenomics.html">{{__('Tokenomics')}}</a></li>
                                         <li><a href="{{route('team')}}">{{__('Ekip')}}</a></li>
                                         <li><a href="info.html">{{__('Bilgi')}}</a></li>

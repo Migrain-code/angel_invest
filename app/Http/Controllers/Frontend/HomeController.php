@@ -9,6 +9,7 @@ use App\Models\Language;
 use App\Models\MainPage;
 use App\Models\Product;
 use App\Models\Reference;
+use App\Models\RoadMap;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -20,8 +21,8 @@ class HomeController extends Controller
         $sliders = Slider::where("isActive", 1)->latest('updated_at')->get();
         $parts = MainPage::where('status', 1)->get();
         $references = Reference::where('status', 1)->take(3)->get();
-
-        return view('frontend.home.index', compact('sliders', 'parts', 'references'));
+        $roadMaps = RoadMap::where('status', 1)->get();
+        return view('frontend.home.index', compact('sliders', 'parts', 'references', 'roadMaps'));
     }
 
     public function changeLanguage(Language $language)

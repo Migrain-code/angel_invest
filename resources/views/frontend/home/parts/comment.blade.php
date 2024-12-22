@@ -16,7 +16,7 @@
                 <div class="tes2-slider" data-aos="fade-up" data-aos-duration="800">
                     <div class="single-slider">
                         <div class="icon">
-                            <img src="assets/img/icons/tes2-qute.png" alt="">
+                            <img src="/frontend/assets/img/icons/tes2-qute.png" alt="">
                         </div>
                         <div class="space20"></div>
                         <p class="pera">"Joining this ICO was one of the best decisions I've made in the crypto space. The team's
@@ -25,7 +25,7 @@
 
                         <div class="bottom-area">
                             <div class="image">
-                                <img src="assets/img/testimonial/tes2-bottom-img.png" alt="">
+                                <img src="/frontend/assets/img/testimonial/tes2-bottom-img.png" alt="">
                             </div>
                             <div class="heading">
                                 <h5><a href="#">Shakib Mahmud</a></h5>
@@ -36,7 +36,7 @@
 
                     <div class="single-slider">
                         <div class="icon">
-                            <img src="assets/img/icons/tes2-qute.png" alt="">
+                            <img src="/frontend/assets/img/icons/tes2-qute.png" alt="">
                         </div>
                         <div class="space20"></div>
                         <p class="pera">"Joining this ICO was one of the best decisions I've made in the crypto space. The team's
@@ -45,7 +45,7 @@
 
                         <div class="bottom-area">
                             <div class="image">
-                                <img src="assets/img/testimonial/tes2-bottom-img.png" alt="">
+                                <img src="/frontend/assets/img/testimonial/tes2-bottom-img.png" alt="">
                             </div>
                             <div class="heading">
                                 <h5><a href="#">Shakib Mahmud</a></h5>
@@ -64,5 +64,5 @@
 
         </div>
     </div>
-    <img src="assets/img/shapes/tes2-shape.png" alt="" class="sec-shape animate3">
+    <img src="/frontend/assets/img/shapes/tes2-shape.png" alt="" class="sec-shape animate3">
 </div>

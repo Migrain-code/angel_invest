@@ -84,7 +84,7 @@
                         </div>
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
-                        <div class="menu-item">
+                        {{-- <div class="menu-item">
                             <!--begin:Menu link-->
                             <a class="menu-link @if(request()->routeIs('admin.blog-category.*')) active @endif" href="{{route('admin.blog-category.index')}}">
                                 <span class="menu-bullet">
@@ -94,6 +94,7 @@
                             </a>
                             <!--end:Menu link-->
                         </div>
+                        --}}
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
                         <div class="menu-item">
@@ -169,7 +170,71 @@
 
 
                 </div>
-                <!--end:Menu Hakkımızda-->
+                <!--end:Menu Anasayfa-->
+                <div data-kt-menu-trigger="click"
+                     class="menu-item menu-accordion  @if(request()->routeIs('admin.slider.*') || request()->routeIs('admin.main-page.*') || request()->routeIs('admin.reference.*')|| request()->routeIs('admin.mobileApp.*')) hover show @endif">
+                    <!--begin:Menu Müşteriler-->
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
+                            <i class="bi bi-blockquote-left"></i>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Anasayfa Bölümleri</span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <!--end:Menu link-->
+                    <!--begin:Menu Müşteriler-->
+                    <div class="menu-sub menu-sub-accordion">
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link @if(request()->routeIs('admin.slider.*')) active @endif" href="{{route('admin.slider.index')}}">
+                                <span class="menu-icon">
+                                    <i class="bi bi-sliders"></i>
+                                </span>
+                                <span class="menu-title">Sliderlar</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                                <a class="menu-link @if(request()->routeIs('admin.main-page.*')) active @endif" href="{{route('admin.main-page.index')}}">
+                                    <span class="menu-icon">
+                                        <i class="fa fa-home"></i>
+                                    </span>
+                                    <span class="menu-title">Açıklama Kutuları</span>
+                                </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link @if(request()->routeIs('admin.reference.*')) active @endif" href="{{route('admin.reference.index')}}">
+                                <span class="menu-icon">
+                                    <i class="fa fa-toolbox"></i>
+                                </span>
+                                <span class="menu-title">Nasıl Çalışır</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link @if(request()->routeIs('admin.mobileApp.*')) active @endif" href="{{route('admin.mobileApp.index')}}">
+                               <span class="menu-icon">
+                                    <i class="fa fa-mobile"></i>
+                                </span>
+                                <span class="menu-title">Mobil Uygulama Alanı</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+                    </div>
+                    <!--end:Menu Müşteriler-->
+
+
+                </div>
+
+
                 {{---
                      <!--begin:Menu Kategoriler-->
                 <div data-kt-menu-trigger="click"
@@ -291,26 +356,8 @@
                     </a>
                     <!--end:Menu link-->
                 </div>
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link @if(request()->routeIs('admin.slider.*')) active @endif" href="{{route('admin.slider.index')}}">
-                        <span class="menu-icon">
-                            <i class="bi bi-sliders"></i>
-                        </span>
-                        <span class="menu-title">Sliderlar</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link @if(request()->routeIs('admin.main-page.*')) active @endif" href="{{route('admin.main-page.index')}}">
-                        <span class="menu-icon">
-                            <i class="fa fa-home"></i>
-                        </span>
-                        <span class="menu-title">Anasayfa Bölümleri</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
+
+
                 {{--
                     <div class="menu-item">
                     <!--begin:Menu link-->
@@ -323,16 +370,7 @@
                     <!--end:Menu link-->
                 </div>
                 --}}
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link @if(request()->routeIs('admin.reference.*')) active @endif" href="{{route('admin.reference.index')}}">
-                        <span class="menu-icon">
-                            <i class="fa fa-toolbox"></i>
-                        </span>
-                        <span class="menu-title">Nasıl Çalışır</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
+
                 <div class="menu-item">
                     <!--begin:Menu link-->
                     <a class="menu-link @if(request()->routeIs('admin.team.*')) active @endif" href="{{route('admin.team.index')}}">
