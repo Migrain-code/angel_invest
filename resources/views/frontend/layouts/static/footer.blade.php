@@ -1,19 +1,41 @@
 <!--=====CTA IMAGE AREA START=======-->
 
+<div class="cta2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 m-auto text-center">
+                <div class="heading">
+                    <span class="span">{{__('Topluma Ait ve İşletilen')}}</span>
+                    <h2>{{setting('footer_content_'.app()->getLocale().'_title')}}</h2>
+                    <div class="space30"></div>
+                    <div class="buttons">
+                        <a href="{{setting('footer_box_1_content_'.app()->getLocale().'_link')}}" target="_blank" class="btn_theme2 btn_theme_active2 mt_40 wow fadeInDown"
+                           data-wow-duration="0.8s">{{setting('footer_box_1_content_'.app()->getLocale().'_title')}} <i class="fa-solid fa-arrow-right"></i><span></span></a>
+                        <a href="{{setting('footer_box_2_content_'.app()->getLocale().'_link')}}" target="_blank" class="btn_theme2 btn_theme_active2 mt_40 wow fadeInDown"
+                           data-wow-duration="0.8s">{{setting('footer_box_2_content_'.app()->getLocale().'_title')}} <i class="fa-solid fa-arrow-right"></i><span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="/frontend/assets/img/shapes/cta2-circle1.png" alt="" class="circle1">
+    <img src="/frontend/assets/img/shapes/cta2-circle2.png" alt="" class="circle2 shape-animaiton4">
+</div>
+
 <div class="cta2-images mt-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 m-auto text-center">
                 <div class="images-area">
                     <div class="image1">
-                        <img src="assets/img/others/cta2-dashboard.png" alt="">
+                        <img src="{{image(setting('footer_banner_image'))}}" alt="">
                     </div>
 
                     <div class="image2">
-                        <img src="assets/img/shapes/cta2-coin.png" alt="">
+                        <img src="/frontend/assets/img/shapes/cta2-coin.png" alt="">
                     </div>
                     <div class="image3">
-                        <img src="assets/img/shapes/cta2-shape.png" alt="">
+                        <img src="/frontend/assets/img/shapes/cta2-shape.png" alt="">
                     </div>
                 </div>
             </div>
@@ -30,16 +52,20 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="heading3">
-                    <h2>Get Regular Update</h2>
+                    <h2>{{__('Düzenli Güncelleme Alın')}}</h2>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-area">
-                    <form action="#">
-                        <input type="email" placeholder="Email Address" class="text-black">
+                    <form action="{{route('subscribe')}}" method="post">
+                        @csrf
+                        <input type="email" name="email" placeholder="{{__('E-posta')}}" class="text-black">
                         <div class="button-area">
-                            <button class="btn_theme2 btn_theme_active2 mt_40 wow fadeInDown" data-wow-duration="0.8s">Subcribe <i
-                                    class="fa-solid fa-arrow-right"></i><span></span></button>
+                            <button type="submit" class="btn_theme2 btn_theme_active2 mt_40 wow fadeInDown" data-wow-duration="0.8s">
+                                {{__('Abone Ol')}}
+                                <i class="fa-solid fa-arrow-right"></i>
+                                <span></span>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -59,51 +85,37 @@
                             <img src="/frontend/assets/img/logo/Angelx.svg" alt="ANGELX">
                         </a>
                         <div class="space20"></div>
-                        <h5>Join Our Blockchain ANGELX Community</h5>
+                        <h5>{{__('Footer Metni')}}</h5>
                         <div class="space30"></div>
-                        <a href="service-details.html" class="btn_theme2 btn_theme_active2 mt_40 wow fadeInDown"
-                           data-wow-duration="0.8s">Join Now <i class="fa-solid fa-arrow-right"></i><span></span></a>
+                        <a href="{{route('user.login')}}" class="btn_theme2 btn_theme_active2 mt_40 wow fadeInDown"
+                           data-wow-duration="0.8s">{{__('Şimdi Katıl')}} <i class="fa-solid fa-arrow-right"></i><span></span></a>
                     </div>
                 </div>
 
                 <div class="col-lg col-md-4 col-6">
                     <div class="single-footer-items">
-                        <h3>Explore</h3>
+                        <h3>{{__('Keşfedin')}}</h3>
 
                         <ul class="menu-list">
-                            <li><a href="/#home">Home</a></li>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#HowItWorks">How It Works</a></li>
-                            <li><a href="#tokenomics">Tokenomics</a></li>
-                            <li><a href="#faq">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg col-md-4 col-6">
-                    <div class="single-footer-items">
-                        <h3>Solution</h3>
-
-                        <ul class="menu-list">
-                            <li><a href="#">Opportunities</a></li>
-                            <li><a href="#">Why Blockchain</a></li>
-                            <li><a href="#">Tokenization</a></li>
-                            <li><a href="#">Launchpad</a></li>
-                            <li><a href="#">Staking</a></li>
+                            <li><a href="/">  {{__('Anasayfa')}}</a></li>
+                            <li><a href="{{route('about.index')}}"> {{__('Hakkımızda')}}</a></li>
+                            <li><a href="{{route('blog.index')}}">{{__('Blog')}}</a></li>
+                            <li><a href="{{route('tokenomics')}}">{{__('Tokenomics')}}</a></li>
+                            <li><a href="{{route('faq.index')}}"> {{__('S.S.S')}}</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg col-md-4 col-6">
                     <div class="single-footer-items pl-5">
-                        <h3>Quick Links</h3>
+                        <h3>{{__('Hızlı Bağlantılar')}}</h3>
 
                         <ul class="menu-list">
-                            <li><a href="/dashboard">Dashboard</a></li>
-                            <li><a href="whitepaper.html">Whitepaper</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="{{route('user.login')}}">{{__('Giriş Yap')}}</a></li>
+                            <li><a target="_blank" href="{{image(setting('whitepaper_link'))}}">{{__('Whitepaper')}}</a></li>
+                            <li><a href="{{route('info')}}">{{__('Bilgi')}}</a></li>
+                            <li><a href="{{route('faq.index')}}"> {{__('S.S.S')}}</a></li>
+                            <li><a href="{{route('contact.index')}}">{{__('İletişim')}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -111,21 +123,19 @@
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="single-footer-items">
-                        <h3>Need Help?</h3>
+                        <h3>{{__('Yardım')}}</h3>
 
                         <ul class="contact-info">
-                            <li><a href="tel:+491626501060">+49 162 6501060</a></li>
-                            <li><a href="mailto:info@angelinvestors.network">info@angelinvestors.network</a></li>
-                            <li><a href="#">angelinvestors.network</a></li>
+                            <li><a href="tel:{{setting('speed_phone')}}">{{setting('speed_phone')}}</a></li>
+                            <li><a href="mailto:{{setting('speed_email')}}">{{setting('speed_email')}}</a></li>
+                            <li><a href="{{route('contact.index')}}">{{setting('speed_address')}}</a></li>
                         </ul>
 
                         <ul class="icons">
-                            <li><a href="#" class="my-1"><i class="fa-brands fa-x-twitter"></i></a></li>
-                            <li><a href="#" class="my-1"><i class="fa-brands fa-telegram"></i></a></li>
-                            <li><a href="#" class="my-1"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="#" class="my-1"><i class="fa-brands fa-youtube"></i></a></li>
-                            <li><a href="#" class="my-1"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            <li><a href="#" class="my-1"><i class="fa-brands fa-tiktok"></i></a></li>
+                            <li><a href="{{setting('speed_twitter_url')}}" class="my-1"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="{{setting('speed_telegram_url')}}" class="my-1"><i class="fa-brands fa-telegram"></i></a></li>
+                            <li><a href="{{setting('speed_intagram_url')}}" class="my-1"><i class="fa-brands fa-instagram"></i></a></li>
+
                         </ul>
                     </div>
                 </div>

@@ -43,7 +43,7 @@
         <li class="breadcrumb-item text-muted"></li>
         <!--end::Item-->
         <li class="breadcrumb-item text-muted">
-            <a href="{{route('admin.blog.index')}}" class="text-muted text-hover-primary">Bloglar</a>
+            <a href="{{route('admin.blog-comment.index')}}" class="text-muted text-hover-primary">Yorumlar</a>
         </li>
         <!--end::Item-->
         <!--begin::Item-->

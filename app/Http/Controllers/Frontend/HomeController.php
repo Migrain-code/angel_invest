@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\BlogComment;
 use App\Models\City;
+use App\Models\EmailSubscribtion;
+use App\Models\Faq;
 use App\Models\Language;
 use App\Models\MainPage;
 use App\Models\Product;
@@ -22,7 +25,9 @@ class HomeController extends Controller
         $parts = MainPage::where('status', 1)->get();
         $references = Reference::where('status', 1)->take(3)->get();
         $roadMaps = RoadMap::where('status', 1)->get();
-        return view('frontend.home.index', compact('sliders', 'parts', 'references', 'roadMaps'));
+        $comments = BlogComment::where('status', 1)->get();
+        $faqs = Faq::where('status', 1)->where('is_main_page', 1)->get();
+        return view('frontend.home.index', compact('sliders', 'parts', 'references', 'roadMaps', 'comments', 'faqs'));
     }
 
     public function changeLanguage(Language $language)
@@ -46,5 +51,20 @@ class HomeController extends Controller
     public function kvkk()
     {
         return view('frontend.kvkk.index');
+    }
+
+    public function subscribe(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+        $emailSubs = new EmailSubscribtion();
+        $emailSubs->email = $request->email;
+        $emailSubs->ip_address = $request->ip();
+        $emailSubs->save();
+        return back()->with('response', [
+            'status' => "success",
+            'message' => trans('Email aboneliğiniz başarıyla alındı.')
+        ]);
     }
 }

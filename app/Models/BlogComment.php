@@ -9,7 +9,7 @@ use Spatie\Translatable\HasTranslations;
 class BlogComment extends Model
 {
     use HasFactory, HasTranslations;
-    protected $translatable = ['username', 'comment'];
+    protected $translatable = ['username', 'comment', 'mission'];
     public function blog()
     {
         return $this->belongsTo(Blog::class);
@@ -18,7 +18,10 @@ class BlogComment extends Model
     {
         return $this->translate('username');
     }
-
+    public function getMission()
+    {
+        return $this->translate('mission');
+    }
     public function getComment()
     {
         return $this->translate('comment');

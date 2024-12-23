@@ -1,69 +1,4 @@
-/*
-============================
-Name:  PayCoin Crypto
-Version: 1.0.0
-Description: PayCoin Crypto
-Author:  VikingLab
-Author URI: https://themeforest.net/user/vikinglab/portfolio
-Location:
-============================
-*/
-/*
 
-CSS LIST
-
-=<::::::::::::::::::::::::::=>
-  HEADER AREA CSS
-=<::::::::::::::::::::::::::=>
-  NAV MENU AREA CSS
-=<::::::::::::::::::::::::::=>
-  HERO AREA CSS
-=<::::::::::::::::::::::::::=>
-  ABOUT AREA CSS
-=<::::::::::::::::::::::::::=>
-  SERVICE AREA CSS
-=<::::::::::::::::::::::::::=>
-  ACCOUNT AREA CSS
-=<::::::::::::::::::::::::::=>
-  FEATURES AREA CSS
-=<::::::::::::::::::::::::::=>
-  BRAND AREA CSS
-=<::::::::::::::::::::::::::=>
-  CHOOSE AREA CSS
-=<::::::::::::::::::::::::::=>
-  PRRELOADER AREA CSS
-=<::::::::::::::::::::::::::=>
-  PRICING AREA CSS
-=<::::::::::::::::::::::::::=>
-  TEAM AREA CSS
-=<::::::::::::::::::::::::::=>
-  TESTIMONIAL AREA CSS
-=<::::::::::::::::::::::::::=>
-  WORK AREA CSS
-=<::::::::::::::::::::::::::=>
-  OTHERS AREA CSS
-=<::::::::::::::::::::::::::=>
-  CONMMON AREA CSS
-=<::::::::::::::::::::::::::=>
-  BLOG AREA CSS
-=<::::::::::::::::::::::::::=>
-  CTA AREA CSS
-=<::::::::::::::::::::::::::=>
- ANIMATION AREA CSS
-=<::::::::::::::::::::::::::=>
-  BUTTONS AREA CSS
-=<::::::::::::::::::::::::::=>
-  TYPOGRAPHY AREA CSS
-=<::::::::::::::::::::::::::=>
-  FOOTER AREA CSS
-=<::::::::::::::::::::::::::=>
-*/
-/*
-::::::::::::::::::::::::::
- TYPOGRAPHY AREA CSS
-::::::::::::::::::::::::::
-*/
-@import url("../../../css2");
 /*
  ::::::::::::::::::::::::::
   ANIMATION AREA CSS
@@ -4373,9 +4308,9 @@ body.body.unic {
   }
 }
 .faq3 .accordion .accordion-item.active {
-  transition: all 0.4s;
-  border-radius: 14px;
-  background: var(--Home-Page-2-Color-Linner-Color, linear-gradient(91deg, #C0FF3A 17.46%, #00FFA3 93.13%));
+    transition: all 0.4s;
+    border-radius: 14px;
+    background: var(--Home-Page-2-Color-Linner-Color, linear-gradient(91deg, #a0da25 17.46%, #00FFA3 93.13%));
 }
 .faq3 .accordion .accordion-item.active button {
   color: #fff;
@@ -6232,7 +6167,7 @@ body.body.unic {
  */
 .contact-page {
   background-color: #000;
-  padding-top: 150px; 
+  padding-top: 150px;
 }
 .contact-page .contact-page-bg {
   border-radius: 4px;
@@ -12427,7 +12362,7 @@ body.body2 {
   position: relative;
 }
 
-/* 
+/*
 ++++++++++++++++++++++++++++++++++
 =========nav menu all ==========
 +++++++++++++++++++++++++++++++++
@@ -12580,7 +12515,7 @@ li.has-dropdown1 span {
   animation-fill-mode: forwards;
 }
 
-/* 
+/*
 ++++++++++++++++++++++++++++++++++
 ==== =====nav menu all ====== ======
 +++++++++++++++++++++++++++++++++
@@ -12605,7 +12540,7 @@ li.has-dropdown1 span {
   display: block;
 }
 
-/* 
+/*
 ++++++++++++++++++++++++++++++++++
 ==== =====nav menu all 2 ====== ======
 +++++++++++++++++++++++++++++++++

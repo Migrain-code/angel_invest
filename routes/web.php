@@ -36,6 +36,7 @@ use App\Http\Controllers\SearchProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoadMapController;
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,10 +66,14 @@ Route::prefix('job-request-form')->as('jobRequest.')->group(function () {
     Route::post('/form', [FJobRequestFormController::class, 'store'])->name('sendForm')/*->middleware('throttle:1,5')*/;
 });
 Route::get('/about', [FAboutController::class, 'index'])->name('about.index');
+Route::get('/faq', [FAboutController::class, 'faq'])->name('faq.index');
 Route::get('team', [FAboutController::class, 'team'])->name('team');
 Route::get('videos', [FAboutController::class, 'video'])->name('video');
 Route::get('roadmap', [FAboutController::class, 'roadmap'])->name('roadmap');
+Route::get('tokenomics', [FAboutController::class, 'tokenomics'])->name('tokenomics');
+Route::get('info', [FAboutController::class, 'info'])->name('info');
 Route::get('kvkk', [HomeController::class, 'kvkk'])->name('kvkk.index'); //kvkk
+Route::post('subscribe', [HomeController::class, 'subscribe'])->name('subscribe')->middleware('throttle:1,5');// 5 Dakikada 1 istek
 
 Route::prefix('search')->as('search.')->group(function () {
     Route::get('/{slug}', [SearchProductController::class, 'category'])->name('category');
@@ -86,6 +91,15 @@ Route::prefix('reference')->as('reference.')->group(function () {
 Route::prefix('production')->as('production.')->group(function () {
     Route::get('/', [FProductionController::class, 'index'])->name('index');
     Route::get('/category/{category}', [FProductionController::class, 'category'])->name('category');
+});
+
+Route::prefix('user')->as('user.')->group(function (){
+   Route::get('login', [\App\Http\Controllers\User\Auth\LoginController::class, 'showLoginForm'])->name('login');
+   Route::get('register', [\App\Http\Controllers\User\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+   Route::post('login', [\App\Http\Controllers\User\Auth\LoginController::class, 'login'])->name('login');
+    Route::middleware('auth:user')->prefix('dashboard')->as('panel.')->group(function () {
+        Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('index');
+    });
 });
 
 Auth::routes();
@@ -109,13 +123,17 @@ Route::middleware('auth')->prefix('dashboard')->as('admin.')->group(function (){
     Route::resource('reference', ReferenceController::class); //referanslar
     Route::resource('team', TeamController::class); //Ekip
     Route::resource('video', VideoController::class); //videolar
-    Route::resource('newspaper', NewsPaperController::class); //videolar
-    Route::resource('roadmap', RoadMapController::class); //videolar
+    Route::resource('newspaper', NewsPaperController::class); //haberler
+    Route::resource('roadmap', RoadMapController::class); //roadmap
     Route::resource('jobRequestForm', JobRequestFormController::class); //iş başvuruları
+    Route::resource('faq', FaqController::class); //ss
     Route::get('kvkk', [\App\Http\Controllers\Admin\HomeController::class, 'kvkk'])->name('kvkk.index'); //kvkk
+    Route::get('info', [\App\Http\Controllers\Admin\HomeController::class, 'info'])->name('info.index'); //kvkk
 
 
     Route::get('mobile-app', [\App\Http\Controllers\Admin\HomeController::class, 'mobileApp'])->name('mobileApp.index'); //mobileApp
+    Route::get('tokenomics', [\App\Http\Controllers\Admin\HomeController::class, 'tokenomics'])->name('tokenomics.index'); //mobileApp
+    Route::get('footer-top', [\App\Http\Controllers\Admin\HomeController::class, 'footerTop'])->name('footerTop.index'); //mobileApp
 
     /*------------------------------Bloglar-----------------------------------*/
     Route::resource('blog-category', BlogCategoryController::class);

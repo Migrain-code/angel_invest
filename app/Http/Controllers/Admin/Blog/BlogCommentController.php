@@ -36,7 +36,8 @@ class BlogCommentController extends Controller
         $blogComment = new BlogComment();
         $blogComment->username = $request->title;
         $blogComment->comment = $request->comment;
-        $blogComment->blog_id = $request->blog_id;
+        $blogComment->mission = $request->mission;
+        //$blogComment->blog_id = $request->blog_id;
 
         if ($request->hasFile('image')) {
             $blogComment->image = $request->file('image')->store('blogCommentImages');
@@ -66,7 +67,9 @@ class BlogCommentController extends Controller
     {
         $blogComment->username = $request->title;
         $blogComment->comment = $request->comment;
-        $blogComment->blog_id = $request->blog_id;
+        $blogComment->mission = $request->mission;
+
+        //$blogComment->blog_id = $request->blog_id;
 
         if ($request->hasFile('image')) {
             $blogComment->image = $request->file('image')->store('blogCommentImages');
@@ -87,9 +90,6 @@ class BlogCommentController extends Controller
         return DataTables::of($data)
             ->editColumn('id', function ($q) {
                 return createCheckbox($q->id, 'BlogComment', 'Yorumları');
-            })
-            ->addColumn('name', function ($q) {
-                return $q->blog->getName();
             })
             ->editColumn('username', function ($q) {
                 return $q->getUserName();

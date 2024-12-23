@@ -68,11 +68,11 @@
                 <div class="col-lg-7">
                     <div class="common-hero-images">
                         <div class="image1">
-                            <img src="assets/img/about/common-hero-coin.png" alt="">
+                            <img src="/frontend/assets/img/about/common-hero-coin.png" alt="">
                         </div>
 
                         <div class="image2">
-                            <img src="assets/img/about/about-hero-area.png" alt="">
+                            <img src="/frontend/assets/img/about/about-hero-area.png" alt="">
                         </div>
 
                     </div>

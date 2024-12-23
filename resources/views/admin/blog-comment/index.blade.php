@@ -1,11 +1,11 @@
 @extends('admin.layouts.master')
-@section('title', 'Blog Yorumları')
+@section('title', 'Yorumlar')
 @section('styles')
 
 @endsection
 @section('breadcrumb')
     <!--begin::Title-->
-    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Blog Yorumları</h1>
+    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Yorumlar</h1>
     <!--end::Title-->
     <!--begin::Breadcrumb-->
     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -27,7 +27,7 @@
         </li>
         <!--end::Item-->
         <!--begin::Item-->
-        <li class="breadcrumb-item text-muted">Blog Yorumları</li>
+        <li class="breadcrumb-item text-muted">Yorumlar</li>
         <!--end::Item-->
     </ul>
     <!--end::Breadcrumb-->
@@ -52,7 +52,7 @@
                                 <input class="form-check-input delete" type="checkbox" data-kt-check="true" data-kt-check-target="#datatable .delete" value="1" />
                             </div>
                         </th>
-                        <th class="min-w-125px">Blog Başlığı</th>
+                        <th class="min-w-125px">Ad Soyad</th>
                         <th class="min-w-125px">Durum</th>
                         <th class="min-w-125px">Kullanıcı Adı</th>
                         <th class="min-w-125px">Created Date</th>
@@ -82,7 +82,7 @@
         let DATA_URL = "{{route('admin.blog-comment.datatable')}}";
         let DATA_COLUMNS = [
             {data: 'id'},
-            {data: 'name'},
+            {data: 'username'},
             {data: 'status'},
             {data: 'username'},
             {data: 'created_at'},

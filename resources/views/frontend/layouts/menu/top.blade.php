@@ -27,8 +27,8 @@
                                 </li>
 
                                 <li class="dropdown-menu-parrent">
-                                    <a href="buy.html" class="main1">
-                                        {{__('Satın Al')}} <i class="fa-solid"></i>
+                                    <a href="{{route('blog.index')}}" class="main1">
+                                        {{__('Blog')}} <i class="fa-solid"></i>
                                     </a>
                                 </li>
 
@@ -37,19 +37,17 @@
                                         {{__('Sayfalar')}} <i class="fa-solid fa-angle-down"></i>
                                     </a>
                                     <ul>
-                                        <li><a href="whitepaper.html">{{__('Whitepaper')}}</a></li>
+                                        <li><a target="_blank" href="{{image(setting('whitepaper_link'))}}">{{__('Whitepaper')}}</a></li>
                                         <li><a href="{{route('roadmap')}}">{{__('Roadmap')}}</a></li>
-                                        <li><a href="tokenomics.html">{{__('Tokenomics')}}</a></li>
+                                        <li><a href="{{route('tokenomics')}}">{{__('Tokenomics')}}</a></li>
                                         <li><a href="{{route('team')}}">{{__('Ekip')}}</a></li>
-                                        <li><a href="info.html">{{__('Bilgi')}}</a></li>
+                                        <li><a href="{{route('info')}}">{{__('Bilgi')}}</a></li>
                                         <li><a href="{{route('contact.index')}}">{{__('İletişim')}}</a></li>
-                                        <li><a href="faq.html">{{__('S.S.S')}}</a></li>
                                     </ul>
                                 </li>
-
                                 <li class="dropdown-menu-parrent">
-                                    <a href="{{route('blog.index')}}" class="main1">
-                                        {{__('Blog')}}
+                                    <a href="{{route('faq.index')}}" class="main1">
+                                        {{__('S.S.S')}} <i class="fa-solid"></i>
                                     </a>
                                 </li>
 
@@ -59,15 +57,22 @@
                                         <i class="fa-solid fa-angle-down"></i>
                                     </a>
                                     <ul>
-                                        <li><a href="user.html">{{__('Profilim')}}</a></li>
-                                        <li><a href="login.html">{{__('Giriş Yap')}}</a></li>
-                                        <li><a href="register.html">{{__('Kayıt Ol')}}</a></li>
+                                        @if(auth('user')->check())
+                                            <li><a href="{{route('user.panel.index')}}">{{__('Profilim')}}</a></li>
+                                        @endif
+                                        <li><a href="{{route('user.login')}}">{{__('Giriş Yap')}}</a></li>
+                                        <li><a href="{{route('user.register')}}">{{__('Kayıt Ol')}}</a></li>
                                     </ul>
                                 </li>
 
                                 <li class="dropdown-menu-parrent">
-                                    <a href="#" class="main1">
-                                        TR <i class="fa-solid fa-angle-down"></i>
+                                    <a href="#" class="main1 text-uppercase">
+                                        @foreach($languages as $language)
+                                            @if($language->code == app()->getLocale())
+                                                {{__($language->code)}}
+                                            @endif
+                                        @endforeach
+                                        <i class="fa-solid fa-angle-down"></i>
                                     </a>
                                     <ul>
                                         @foreach($languages as $language)

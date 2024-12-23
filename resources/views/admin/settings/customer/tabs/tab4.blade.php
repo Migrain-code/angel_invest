@@ -41,28 +41,10 @@
                 <!--end::Input group-->
                 <div class="fv-row mb-7">
                     <!--begin::Label-->
-                    <label class="required fs-6 fw-semibold mb-2">Huawei Store Link <a href="{{setting('speed_mobile_huawei_store_link')}}" target="_blank">Görüntüle</a></label>
+                    <label class="required fs-6 fw-semibold mb-2">Telegram <a href="{{setting('speed_telegram_url')}}" target="_blank">Görüntüle</a></label>
                     <!--end::Label-->
                     <!--begin::Input-->
-                    <input type="text" class="form-control form-control-solid" placeholder="" name="speed_mobile_huawei_store_link" value="{{setting('speed_mobile_huawei_store_link')}}" />
-                    <!--end::Input-->
-                </div>
-
-                <div class="fv-row mb-7">
-                    <!--begin::Label-->
-                    <label class="required fs-6 fw-semibold mb-2">App Store Link <a href="{{setting('speed_mobile_app_store_link')}}" target="_blank">Görüntüle</a></label>
-                    <!--end::Label-->
-                    <!--begin::Input-->
-                    <input type="text" class="form-control form-control-solid" placeholder="" name="speed_mobile_app_store_link" value="{{setting('speed_mobile_app_store_link')}}" />
-                    <!--end::Input-->
-                </div>
-
-                <div class="fv-row mb-7">
-                    <!--begin::Label-->
-                    <label class="required fs-6 fw-semibold mb-2">Play Store Link <a href="{{setting('speed_mobile_play_store_link')}}" target="_blank">Görüntüle</a></label>
-                    <!--end::Label-->
-                    <!--begin::Input-->
-                    <input type="text" class="form-control form-control-solid" placeholder="" name="speed_mobile_play_store_link" value="{{setting('speed_mobile_play_store_link')}}" />
+                    <input type="text" class="form-control form-control-solid" placeholder="" name="speed_telegram_url" value="{{setting('speed_telegram_url')}}" />
                     <!--end::Input-->
                 </div>
 

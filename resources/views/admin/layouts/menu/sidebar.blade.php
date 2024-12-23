@@ -57,7 +57,7 @@
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu Bloglar-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion @if(request()->routeIs('admin.blog.*') || request()->routeIs('admin.blog-category.*') || request()->routeIs('admin.blog-comment.*')) hover show @endif">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion @if(request()->routeIs('admin.blog.*') || request()->routeIs('admin.blog-category.*')) hover show @endif">
                     <!--begin:Menu Müşteriler-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -95,18 +95,6 @@
                             <!--end:Menu link-->
                         </div>
                         --}}
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link @if(request()->routeIs('admin.blog-comment.*')) active @endif" href="{{route('admin.blog-comment.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Blog Yorumları</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>
                         <!--end:Menu item-->
                     </div>
                     <!--end:Menu Müşteriler-->
@@ -153,18 +141,7 @@
                             <!--end:Menu link-->
                         </div>
                         <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div class="menu-item ">
-                            <!--begin:Menu link-->
-                            <a class="menu-link @if(request()->routeIs('admin.downloadable-content.*')) active @endif" href="{{route('admin.downloadable-content.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">İndirilebilir İçerikler</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>
-                        <!--end:Menu item-->
+
                     </div>
                     <!--end:Menu Müşteriler-->
 
@@ -172,7 +149,7 @@
                 </div>
                 <!--end:Menu Anasayfa-->
                 <div data-kt-menu-trigger="click"
-                     class="menu-item menu-accordion  @if(request()->routeIs('admin.slider.*') || request()->routeIs('admin.main-page.*') || request()->routeIs('admin.reference.*')|| request()->routeIs('admin.mobileApp.*')) hover show @endif">
+                     class="menu-item menu-accordion  @if(request()->routeIs('admin.slider.*') || request()->routeIs('admin.main-page.*') || request()->routeIs('admin.tokenomics.*')|| request()->routeIs('admin.footerTop.*') || request()->routeIs('admin.blog-comment.*') || request()->routeIs('admin.reference.*')|| request()->routeIs('admin.mobileApp.*')) hover show @endif">
                     <!--begin:Menu Müşteriler-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -208,6 +185,16 @@
                         </div>
                         <div class="menu-item">
                             <!--begin:Menu link-->
+                            <a class="menu-link @if(request()->routeIs('admin.tokenomics.*')) active @endif" href="{{route('admin.tokenomics.index')}}">
+                                    <span class="menu-icon">
+                                        <i class="fa fa-coins"></i>
+                                    </span>
+                                <span class="menu-title">Tokenomics</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
                             <a class="menu-link @if(request()->routeIs('admin.reference.*')) active @endif" href="{{route('admin.reference.index')}}">
                                 <span class="menu-icon">
                                     <i class="fa fa-toolbox"></i>
@@ -228,6 +215,27 @@
                             <!--end:Menu link-->
                         </div>
                         <!--end:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link @if(request()->routeIs('admin.blog-comment.*')) active @endif" href="{{route('admin.blog-comment.index')}}">
+                                <span class="menu-icon">
+                                    <i class="fa fa-comment"></i>
+                                </span>
+                                <span class="menu-title">Yorumlar</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link @if(request()->routeIs('admin.footerTop.*')) active @endif" href="{{route('admin.footerTop.index')}}">
+                                <span class="menu-icon">
+                                    <i class="fa fa-image"></i>
+                                </span>
+                                <span class="menu-title">En Alt Alan</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
                     </div>
                     <!--end:Menu Müşteriler-->
 
@@ -381,26 +389,7 @@
                     </a>
                     <!--end:Menu link-->
                 </div>
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link @if(request()->routeIs('admin.video.*')) active @endif" href="{{route('admin.video.index')}}">
-                        <span class="menu-icon">
-                            <i class="fa fa-video"></i>
-                        </span>
-                        <span class="menu-title">Videolar</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link @if(request()->routeIs('admin.newspaper.*')) active @endif" href="{{route('admin.newspaper.index')}}">
-                        <span class="menu-icon">
-                            <i class="fa fa-newspaper"></i>
-                        </span>
-                        <span class="menu-title">Basında Biz</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
+
                 <div class="menu-item">
                     <!--begin:Menu link-->
                     <a class="menu-link @if(request()->routeIs('admin.contact-request.*')) active @endif" href="{{route('admin.contact-request.index')}}">
@@ -414,20 +403,7 @@
                     </a>
                     <!--end:Menu link-->
                 </div>
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link @if(request()->routeIs('admin.jobRequestForm.*')) active @endif" href="{{route('admin.jobRequestForm.index')}}">
-                        <span class="menu-icon">
-                            <i class="fa fa-paperclip"></i>
-                        </span>
-                        <span class="menu-title justify-content-between">
-                            İş Başvuru Formları
-                            <span class="badge badge-circle badge-danger">{{auth('admin')->user()->jobRequestCount()}}</span>
-                        </span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
-            <!--end::Menu-->
+
                 <div class="menu-item">
                     <!--begin:Menu link-->
                     <a class="menu-link @if(request()->routeIs('admin.kvkk.*')) active @endif" href="{{route('admin.kvkk.index')}}">
@@ -439,16 +415,30 @@
                         </span>
                     </a>
                     <!--end:Menu link-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link @if(request()->routeIs('admin.language.*')) active @endif" href="{{route('admin.language.index')}}">
+
+                </div>
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link @if(request()->routeIs('admin.info.*')) active @endif" href="{{route('admin.info.index')}}">
+                        <span class="menu-icon">
+                            <i class="fa fa-paperclip"></i>
+                        </span>
+                        <span class="menu-title">
+                            Bilgi Metni
+                        </span>
+                    </a>
+                    <!--end:Menu link-->
+
+                </div>
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link @if(request()->routeIs('admin.language.*')) active @endif" href="{{route('admin.language.index')}}">
                         <span class="menu-icon">
                             <i class="fa fa-language"></i>
                         </span>
-                            <span class="menu-title">Dil Ayarları</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
+                        <span class="menu-title">Dil Ayarları</span>
+                    </a>
+                    <!--end:Menu link-->
                 </div>
                 <!--end::Menu-->
         </div>

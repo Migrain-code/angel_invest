@@ -9,7 +9,8 @@
         <input type="file" class="form-control form-control-solid" placeholder="" name="image" value="" />
         <!--end::Input-->
     </div>
-    <div class="fv-row mb-7">
+    {{--
+         <div class="fv-row mb-7">
         <!--begin::Label-->
         <label class="required fs-6 fw-semibold mb-2">Blog</label>
         <!--end::Label-->
@@ -22,4 +23,5 @@
         </select>
         <!--end::Input-->
     </div>
+    --}}
 </div>
