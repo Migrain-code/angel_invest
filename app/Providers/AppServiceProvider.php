@@ -50,7 +50,7 @@ class AppServiceProvider extends ServiceProvider
         $productCategories = Category::where('status', 1)->get();
         View::share('productCategories', $productCategories);
 
-        $languages = Language::orderBy('id', 'asc')->take(2)->get();
+        $languages = Language::orderBy('id', 'asc')->take(4)->get();
         View::share('languages', $languages);
 
         Paginator::useBootstrapFour();
