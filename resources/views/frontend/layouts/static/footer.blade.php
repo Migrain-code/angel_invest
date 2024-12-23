@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <img class="shape" src="assets/img/shapes/cta3-shape.png" alt="">
+        <img class="shape" src="/frontend/assets/img/shapes/cta3-shape.png" alt="">
     </div>
 </div>
 

@@ -18,12 +18,15 @@
                     @foreach($faqs as $faq)
                         <div class="accordion-item @if($loop->first) active @endif" data-aos="fade-up" data-aos-duration="700">
                             <h2 class="accordion-header" id="heading{{$loop->index}}">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$loop->index}}"
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse{{$loop->index}}"
                                         aria-expanded="true" aria-controls="collapse{{$loop->index}}">
                                     {{$faq->getQuestion()}}
                                 </button>
                             </h2>
-                            <div id="collapse{{$loop->index}}" class="accordion-collapse collapse @if($loop->first) show @endif" aria-labelledby="heading{{$loop->index}}"
+                            <div id="collapse{{$loop->index}}"
+                                 class="accordion-collapse collapse @if($loop->first) show @endif"
+                                 aria-labelledby="heading{{$loop->index}}"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                    {!! $faq->getAnswer() !!}
@@ -37,10 +40,6 @@
             </div>
         </div>
     </div>
-    <img class="sec-shape1" src="/frontend/assets/img/shapes/about1-shape.png" alt="">
     <img class="sec-shape2" src="/frontend/assets/img/shapes/about2-shape.png" alt="">
-    <img class="sec-shape3" src="/frontend/assets/img/shapes/about3-shape.png" alt="">
-    <img class="sec-shape4" src="/frontend/assets/img/shapes/about4-shape.png" alt="">
-    <img class="sec-shape5" src="/frontend/assets/img/shapes/about5-shape.png" alt="">
     <img class="sec-shape6" src="/frontend/assets/img/shapes/about2-shape.png" alt="">
 </div>

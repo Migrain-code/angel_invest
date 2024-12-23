@@ -51,5 +51,5 @@
             </div>
         </div>
     </div>
-    <img src="assets/img/shapes/about2-shape.png" alt="" class="sec-shape">
+    <img src="/frontend/assets/img/shapes/about2-shape.png" alt="" class="sec-shape">
 </div>

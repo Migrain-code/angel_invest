@@ -94,7 +94,7 @@
 
                         <div class="header2-buttons">
                             <div class="button">
-                                <a href="register.html"
+                                <a href="{{route('user.register')}}"
                                    class="btn_theme btn_theme_active mt_40 wow fadeInDown"
                                    data-wow-duration="0.8s">
                                     {{__('Buy $ANGELX')}}
@@ -111,5 +111,4 @@
     </div>
 </header>
 
-
-<!-- end Header -->
+@include('frontend.layouts.menu.sidebar')
