@@ -79,4 +79,15 @@ class LoginController extends Controller
         ]);
 
     }
+
+
+    public function logout(Request $request)
+    {
+        $user = Auth::guard('user')->user();
+        Auth::guard('user')->logout();
+        return to_route('user.login')->with('response', [
+            'status' => "success",
+            'message' => $user->name. " Oturumunuz Kapatıldı",
+        ]);
+    }
 }

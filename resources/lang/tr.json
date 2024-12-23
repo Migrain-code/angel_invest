@@ -14,6 +14,7 @@
     "S.S.S": "S.S.S",
     "Yorum": "Yorum",
     "Kad\u0131n": "Kad\u0131n",
+    "Logout": "\u00c7\u0131k\u0131\u015f Yap",
     "Rus\u00e7a": "Rus\u00e7a",
     "T\u00fcm\u00fc": "T\u00fcm\u00fc",
     "\u0130l\u00e7e": "\u0130l\u00e7e",
@@ -21,6 +22,7 @@
     "E-posta": "E-posta",
     "Fabrika": "Fabrika",
     "G\u00f6ster": "G\u00f6ster",
+    "Profile": "Profil",
     "Roadmap": "Yol Haritas\u0131",
     "Telefon": "Telefon",
     "Yard\u0131m": "Yard\u0131m",
@@ -141,5 +143,7 @@
     "\u00d6zge\u00e7mi\u015f PDF veya DOC format\u0131nda olmal\u0131d\u0131r.": "\u00d6zge\u00e7mi\u015f PDF veya DOC format\u0131nda olmal\u0131d\u0131r.",
     "\u00d6zge\u00e7mi\u015f dosyas\u0131 en fazla 2 MB boyutunda olabilir": "\u00d6zge\u00e7mi\u015f dosyas\u0131 en fazla 2 MB boyutunda olabilir",
     "Do\u011fum tarihi ge\u00e7erli bir tarih format\u0131nda olmal\u0131d\u0131r": "Do\u011fum tarihi ge\u00e7erli bir tarih format\u0131nda olmal\u0131d\u0131r",
-    "\u00c7al\u0131\u015fan Adaylar\u0131na \u0130li\u015fkin Ki\u015fisel Verilerin Korunmas\u0131 Kanunu Kapsam\u0131nda Ayd\u0131nlatma Metnini Okudum, Onayl\u0131yorum": "\u00c7al\u0131\u015fan Adaylar\u0131na \u0130li\u015fkin Ki\u015fisel Verilerin Korunmas\u0131 Kanunu Kapsam\u0131nda Ayd\u0131nlatma Metnini Okudum, Onayl\u0131yorum"
+    "\u00c7al\u0131\u015fan Adaylar\u0131na \u0130li\u015fkin Ki\u015fisel Verilerin Korunmas\u0131 Kanunu Kapsam\u0131nda Ayd\u0131nlatma Metnini Okudum, Onayl\u0131yorum": "\u00c7al\u0131\u015fan Adaylar\u0131na \u0130li\u015fkin Ki\u015fisel Verilerin Korunmas\u0131 Kanunu Kapsam\u0131nda Ayd\u0131nlatma Metnini Okudum, Onayl\u0131yorum",
+    "Settings": "Ayarlar",
+    "Dashboard": "G\u00f6sterge Paneli"
 }

@@ -97,8 +97,12 @@ Route::prefix('user')->as('user.')->group(function (){
    Route::get('login', [\App\Http\Controllers\User\Auth\LoginController::class, 'showLoginForm'])->name('login');
    Route::get('register', [\App\Http\Controllers\User\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
    Route::post('login', [\App\Http\Controllers\User\Auth\LoginController::class, 'login'])->name('login');
+   Route::post('logout', [\App\Http\Controllers\User\Auth\LoginController::class, 'logout'])->name('logout');
     Route::middleware('auth:user')->prefix('dashboard')->as('panel.')->group(function () {
         Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('index');
+        Route::get('/settings', [\App\Http\Controllers\User\SettingController::class, 'settings'])->name('setting.index');
+        Route::get('/buy', [\App\Http\Controllers\User\SettingController::class, 'buy'])->name('buy.index');
+
     });
 });
 

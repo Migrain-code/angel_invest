@@ -14,6 +14,7 @@
     "S.S.S": "FAQ",
     "Yorum": "Comment",
     "Kad\u0131n": "Female",
+    "Logout": "Logout",
     "Rus\u00e7a": "Russian",
     "T\u00fcm\u00fc": "All",
     "\u0130l\u00e7e": "District",
@@ -21,6 +22,7 @@
     "E-posta": "Email",
     "Fabrika": "Factory",
     "G\u00f6ster": "Show",
+    "Profile": "Profile",
     "Roadmap": "Roadmap",
     "Telefon": "Phone",
     "Yard\u0131m": "Need Help?",
@@ -138,9 +140,11 @@
     "Ki\u015fisel Verilerin Korunmas\u0131 Metni": "Clarification Text on Protection of Personal Data",
     "Mesaj\u0131n\u0131z ba\u015far\u0131yla g\u00f6nderildi": "Your message has been sent successfully",
     "$ANGELX I\u0307LE I\u0307LETI\u0307\u015eI\u0307ME GE\u00c7I\u0307N'": "Leave A Message For Us",
+    "Email aboneli\u011finiz ba\u015far\u0131yla al\u0131nd\u0131.": "Your email subscription has been successfully received.",
     "\u00d6zge\u00e7mi\u015f PDF veya DOC format\u0131nda olmal\u0131d\u0131r": "CV should be in PDF or DOC format",
     "\u00d6zge\u00e7mi\u015f dosyas\u0131 en fazla 2 MB boyutunda olabilir": "The CV file can be maximum 2 MB in size",
     "Do\u011fum tarihi ge\u00e7erli bir tarih format\u0131nda olmal\u0131d\u0131r": "Date of birth must be in a valid date format",
     "\u00c7al\u0131\u015fan Adaylar\u0131na \u0130li\u015fkin Ki\u015fisel Verilerin Korunmas\u0131 Kanunu Kapsam\u0131nda Ayd\u0131nlatma Metnini Okudum, Onayl\u0131yorum": "I Read and Approved the Clarification Text Regarding Employee Candidates within the Scope of the Law on the Protection of Personal Data",
-    "Email aboneli\u011finiz ba\u015far\u0131yla al\u0131nd\u0131.": "Your email subscription has been successfully received."
+    "Settings": "Settings",
+    "Dashboard": "Dashboard"
 }
