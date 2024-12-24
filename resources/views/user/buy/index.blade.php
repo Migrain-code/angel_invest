@@ -3,203 +3,244 @@
 @section('styles')
 @endsection
 @section('content')
+    <div class='col-xs-12'>
+        <div class="page-title">
 
-
-        <div class='col-xs-12'>
-            <div class="page-title">
-
-                <div class="pull-left">
-                    <!-- PAGE HEADING TAG - START -->
-                    <h1 class="title">{{__('Buy')}}</h1>
-                    <!-- PAGE HEADING TAG - END -->
-                </div>
-
+            <div class="pull-left">
+                <!-- PAGE HEADING TAG - START -->
+                <h1 class="title">Buy ANGELX</h1>
+                <!-- PAGE HEADING TAG - END -->
             </div>
+
+
         </div>
-        <div class="col-lg-12">
-            <section class="box nobox marginBottom0">
-                <div class="content-body">
-                    <div class="row">
+    </div>
 
-                        <div class="col-lg-4 col-sm-6 col-xs-12">
-                            <div class="r4_counter db_box">
-                                <div class="icon-after">
-                                    <img src="/user/assets/icons/ico-lg.png" alt="">
-                                </div>
-                                <div class="cryp-icon">
-                                    <img src="/user/assets/icons/sec-level3.png" class='mt-10' alt="">
-                                </div>
-                                <div class="stats">
-                                    <h3 class="mb-5">$ 5,019,034</h3>
-                                    <span>Your Coin Worth at Launch </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-xs-12">
-                            <div class="r4_counter db_box">
-                                <div class="icon-after">
-                                    <img src="/user/assets/icons/ico-lg.png" alt="">
-                                </div>
-                                <div class="cryp-icon">
-                                    <img src="/user/assets/icons/sec-level2.png" class='mt-10' alt="">
-                                </div>
-                                <div class="stats">
-                                    <h3 class="mb-5">126 ANGELX</h3>
-                                    <span>Total BDAG Balance </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-xs-12">
-                            <div class="r4_counter db_box">
-                                <div class="icon-after">
-                                    <img src="/user/assets/icons/ico-lg.png" alt="">
-                                </div>
-                                <div class="cryp-icon">
-                                    <img src="/user/assets/icons/sec-level1.png" class='mt-10' alt="">
-                                </div>
-                                <div class="stats">
-                                    <h3 class="mb-5">903 ANGELX</h3>
-                                    <span>Referral Earnings</span>
-                                </div>
-                            </div>
-                        </div>
+    <div class="clearfix"></div>
 
-                    </div>
-                    <!-- End .row -->
+    <div class="col-lg-6">
+        <section class="box has-border-left-3">
+            <header class="panel_header">
+                <h2 class="title pull-left">Buy Cryptocurrency</h2>
+                <div class="actions panel_actions pull-right">
+                    <a class="box_toggle fa fa-chevron-down"></a>
+                    <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
+                    <a class="box_close fa fa-times"></a>
                 </div>
-            </section>
-        </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="transfer-wraper">
+                            <div class="form-group no-mb">
+                                <div class="input-group mb-10">
+                                    <span class="input-group-addon" id="network">$</span>
 
-        <div class="clearfix"></div>
-        <!-- MAIN CONTENT AREA STARTS -->
+                                    <div class="input-group-btn" style="width:100%">
+                                        <select type="text" class="form-control">
+                                            <option selected>BNB (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option>BNB (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option>USDT (TRC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option>ETH (ERC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option>USDT (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option>SOL (SOLANA) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                        </select>
 
-        <div class="col-lg-4">
-            <section class="box has-border-left-3">
-                <header class="panel_header">
-                    <h2 class="title pull-left">ICO Stage Progress</h2>
-                    <div class="actions panel_actions pull-right">
-                        <a class="box_toggle fa fa-chevron-down"></a>
-                        <a class="box_close fa fa-times"></a>
-                    </div>
-                </header>
-                <div class="content-body">
-                    <div class="row">
-                        <div class="tile-progress bg-accent" style="margin-left:15px;margin-right:15px">
-                            <div class="content">
-                                <h4><i class="fa fa-clock-o icon-sm"></i> Time to Next Stage</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 56%"></div>
-                                </div>
-                                <span>65% increase</span>
-                            </div>
-                        </div>
+                                    </div>
 
-                        <div class="tile-progress bg-accent no-mb" style="margin-left:15px;margin-right:15px">
-                            <div class="content">
-                                <h4><i class="fa fa-flask icon-sm"></i> Stage ICO Complete</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 79%"></div>
-                                </div>
-                                <span>79% complete</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="col-lg-4">
-            <section class="box has-border-left-3">
-                <header class="panel_header">
-                    <h2 class="title pull-left">Upcoming ICO Stage</h2>
-                    <div class="actions panel_actions pull-right">
-                        <a class="box_toggle fa fa-chevron-down"></a>
-                        <a class="box_close fa fa-times"></a>
-                    </div>
-                </header>
-                <div class="content-body">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="price-pack no-mt no-mb">
-                                <div class="head bg-accent">
-                                    <h3>ICO Stage 3</h3>
                                 </div>
 
-                                <ul class="item-list list-unstyled" style="padding: 20px 15px 10px;">
-                                    <li>Starting Price: <strong> 0.30 $</strong></li>
-                                    <li>Starting Date <strong> 15-3-2024</strong></li>
-                                    <li>Ending Date <strong> 1-4-2024</strong></li>
-                                    <li>Tokens Amount<strong> 1,000,0000</strong></li>
-                                </ul>
-                                <button type="button" class="btn btn-primary btn-lg has-gradient-to-right-bottom">READ MORE</button>
+                                <label class="form-label">Your Metamask Wallet Address</label>
+                                <span class="desc"></span>
 
-                            </div>
-                        </div>
+                                <div class="input-group mb-10">
+                                            <span class="input-group-addon">
+                                                <span class="arrow"></span>
+                                                <img src="/user/assets/icons/wallet-o.png" alt="icon">
+                                            </span>
+                                    <input type="text" id="walletAddress" class="form-control"  readonly placeholder="OxsD12F32xvW3deG5...">
+                                </div>
 
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="col-lg-4">
-            <section class="box has-border-left-3">
-                <header class="panel_header">
-                    <h2 class="title pull-left">Buy more Tokens</h2>
-                    <div class="actions panel_actions pull-right">
-                        <a class="box_toggle fa fa-chevron-down"></a>
-                        <a class="box_close fa fa-times"></a>
-                    </div>
-                </header>
-                <div class="content-body">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="transfer-wraper">
-                                <div class="form-group no-mb">
+
+                                <div class="col-lg-5 no-pl">
+
                                     <label class="form-label">Amount</label>
-                                    <span class="desc">minimum value "0.001 BTC"</span>
-
-                                    <div class="input-group mb-10">
-                                        <span class="input-group-addon">$</span>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="enter amount">
-                                        <div class="input-group-btn">
-                                            <button type="button" class="btn btn-red dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                                BTC <span class="caret"></span>
-                                            </button>
-
-                                            <ul class="dropdown-menu dropdown-red no-spacing">
-                                                <li><a href="#">LTC</a></li>
-                                                <li><a href="#">DASH</a></li>
-                                                <li><a href="#">Ripple</a></li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-
-                                    <label class="form-label">wallet address</label>
-                                    <span class="desc"></span>
-
                                     <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <span class="arrow"></span>
-                                                    <img src="/user/assets/icons/wallet-o.png" alt="icon">
-                                                </span>
-                                        <input type="text" class="form-control" placeholder="OxsD12F32xvW3deG5...">
+                                        <input type="text" class="form-control" id="dollarPriceInput" placeholder="Exchange amount"
+                                               aria-describedby="basic-addon2">
+                                        <span class="input-group-addon" id="basic-addon1">USD</span>
                                     </div>
+                                </div>
+                                <div class="col-lg-2" style="height: 95px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;">
+                                    <label class="form-label"></label>
+                                    <div class="exchange-img-wrapper">
+                                        <img src="/user/assets/icons/exchange-arrows.png" class="mt-5 center-block"
+                                             style="width:25px" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 no-pr">
 
-                                    <a href="buy-and-sell.html" class="btn btn-primary btn-lg mt-20 has-gradient-to-right-bottom" style="width:100%">Buy More Tokens</a>
+                                    <label class="form-label">Total</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="cryptoPriceInput" placeholder="Equivalent amount"
+                                               aria-describedby="basic-addon2">
+                                        <span class="input-group-addon" id="basic-addon2">ANGELX</span>
+                                    </div>
                                 </div>
 
+                                <button type="button"
+                                        class="btn btn-primary btn-lg mt-20 "
+                                        style="width:100%">Buy ANGELX</button>
                             </div>
+
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+    </div>
 
-        <div class="clearfix"></div>
 
+    <div class="col-lg-6">
+        <section class="box has-border-left-3">
+            <header class="panel_header">
+                <h2 class="title pull-left">Recent Purchases</h2>
+                <div class="actions panel_actions pull-right">
+                    <a class="box_toggle fa fa-chevron-down"></a>
+                    <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
+                    <a class="box_close fa fa-times"></a>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="table-responsive" data-pattern="priority-columns">
+                            <table id="tech-companies-1"
+                                   class="table table-small-font mb-10 table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Deal ID Number</th>
+                                    <th data-priority="1">Trade Time</th>
+                                    <th data-priority="3">Status</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 126515</th>
+                                    <td>17.24AM</td>
+                                    <td><span class="status-complete">complete</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 123675</th>
+                                    <td>18.14AM</td>
+                                    <td><span class="status-pending">pending</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 126515</th>
+                                    <td>20.25AM</td>
+                                    <td><span class="status-pending">pending</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 159034</th>
+                                    <td>21.24AM</td>
+                                    <td><span class="status-cancelled">cancelled</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 136563</th>
+                                    <td>21.50AM</td>
+                                    <td><span class="status-complete">complete</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 177384</th>
+                                    <td>21.59PM</td>
+                                    <td><span class="status-complete">complete</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 173434</th>
+                                    <td>22.11PM</td>
+                                    <td><span class="status-cancelled">cancelled</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="clearfix"></div>
 @endsection
 @section('scripts')
+
     <script>
+        $('#dollarPriceInput').on('input', function () {
+            let oneTokenPrice = 0.005;
+            var dollarPrice = $(this).val();
+            var cryptoPrice = dollarPrice / oneTokenPrice;
+            $('#cryptoPriceInput').val(cryptoPrice);
+        });
 
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
+    <script>
+        let web3;
+        var textWalletAddress = "";
+        var walletAddress = document.getElementById("walletAddress");
+        var connectButton  = document.getElementById("btn-connect");
+        async function connect() {
+            if (window.ethereum) {
+                // Cüzdan bağlantısını iste
+                await window.ethereum.request({ method: "eth_requestAccounts" });
+
+                // Web3 nesnesini oluştur
+                web3 = new Web3(window.ethereum);
+
+                // Hesapları al
+                const accounts = await web3.eth.getAccounts();
+
+                if (accounts.length > 0) {
+                    var textWalletAddress = accounts[0];  // İlk adresi al
+                    console.log(`Wallet: ${textWalletAddress}`);
+                    walletAddress.value = textWalletAddress;
+                    // Connect butonunu gizle, Disconnect butonunu göster
+                    connectButton.style.display = 'none';
+                    document.getElementById('disconnectButton').style.display = 'inline-block';
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Wallet Connected Successfully',
+
+                    })
+                }
+            } else {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'No Ethereum provider found. Please install a wallet like MetaMask or Trust Wallet.',
+
+                })
+            }
+        }
+
+        // Disconnect fonksiyonu
+        function disconnect() {
+            // Web3 bağlantısını kes (Temizlik işlemleri)
+            web3 = null;
+            textWalletAddress = null;
+
+            // Connect butonunu tekrar göster, Disconnect butonunu gizle
+            document.getElementById('btn-connect').style.display = 'inline-block';
+            document.getElementById('disconnectButton').style.display = 'none';
+            Toast.fire({
+                icon: 'success',
+                title: 'Disconnected from wallet.',
+
+            });
+        }
+    </script>
+
 @endsection

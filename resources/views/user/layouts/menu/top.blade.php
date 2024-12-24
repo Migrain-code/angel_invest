@@ -99,8 +99,23 @@
         </div>
         <div class='pull-right'>
             <ul class="info-menu right-links list-inline list-unstyled">
-
-                <li class="profile" style="padding: 0px 35px;">
+                <li class="message-toggle-wrapper" style="margin-left: 10px">
+                    <a href="javascript:void(0)" data-toggle="dropdown" onclick="connect();" id="btn-connect" class="btn btn-primary" style="border-radius: 20px;
+    background: #287bc6;
+    border: none;
+    box-shadow: 1px 2px 5px #287bc6;">
+                        <i class="fa fa-wallet"></i>
+                        Connect
+                    </a>
+                    <a href="javascript:void(0)" data-toggle="dropdown" onclick="disconnect();" id="disconnectButton" class="btn btn-primary" style="border-radius: 20px;
+    background: #287bc6;
+    border: none;
+    box-shadow: 1px 2px 5px #287bc6;display: none">
+                        <i class="fa fa-x"></i>
+                        Disconnect
+                    </a>
+                </li>
+                <li class="profile" style="">
                     <a href="#" data-toggle="dropdown" class="toggle">
                         <img src="{{image(auth('user')->user()->image)}}" alt="user-image" class="img-circle img-inline">
                         <span>{{auth('user')->user()->name}} <i class="fa fa-angle-down"></i></span>
