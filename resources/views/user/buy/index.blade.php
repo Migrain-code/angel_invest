@@ -31,19 +31,20 @@
             <div class="content-body">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="transfer-wraper">
+                        <form method="post" action="{{route('user.panel.buy.token')}}" class="transfer-wraper">
+                            @csrf
                             <div class="form-group no-mb">
                                 <div class="input-group mb-10">
                                     <span class="input-group-addon" id="network">$</span>
 
                                     <div class="input-group-btn" style="width:100%">
-                                        <select type="text" class="form-control">
+                                        <select type="text" name="system_wallet_address" class="form-control">
                                             <option selected>BNB (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
-                                            <option>BNB (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
-                                            <option>USDT (TRC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
-                                            <option>ETH (ERC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
-                                            <option>USDT (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
-                                            <option>SOL (SOLANA) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option value="BNB (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">BNB (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option value="USDT (TRC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">USDT (TRC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option value="ETH (ERC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">ETH (ERC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option value="USDT (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">USDT (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
+                                            <option value="SOL (SOLANA) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">SOL (SOLANA) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB</option>
                                         </select>
 
                                     </div>
@@ -58,7 +59,7 @@
                                                 <span class="arrow"></span>
                                                 <img src="/user/assets/icons/wallet-o.png" alt="icon">
                                             </span>
-                                    <input type="text" id="walletAddress" class="form-control"  readonly placeholder="OxsD12F32xvW3deG5...">
+                                    <input type="text" id="walletAddress" name="user_wallet_address" class="form-control"  readonly placeholder="OxsD12F32xvW3deG5...">
                                 </div>
 
 
@@ -66,7 +67,7 @@
 
                                     <label class="form-label">Amount</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="dollarPriceInput" placeholder="Exchange amount"
+                                        <input type="text" name="amount" class="form-control" id="dollarPriceInput" placeholder="Exchange amount"
                                                aria-describedby="basic-addon2">
                                         <span class="input-group-addon" id="basic-addon1">USD</span>
                                     </div>
@@ -92,12 +93,12 @@
                                     </div>
                                 </div>
 
-                                <button type="button"
+                                <button type="submit"
                                         class="btn btn-primary btn-lg mt-20 "
                                         style="width:100%">Buy ANGELX</button>
                             </div>
 
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -129,41 +130,14 @@
                                     <th data-priority="3">Status</th>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 126515</th>
-                                    <td>17.24AM</td>
-                                    <td><span class="status-complete">complete</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 123675</th>
-                                    <td>18.14AM</td>
-                                    <td><span class="status-pending">pending</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 126515</th>
-                                    <td>20.25AM</td>
-                                    <td><span class="status-pending">pending</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 159034</th>
-                                    <td>21.24AM</td>
-                                    <td><span class="status-cancelled">cancelled</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 136563</th>
-                                    <td>21.50AM</td>
-                                    <td><span class="status-complete">complete</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 177384</th>
-                                    <td>21.59PM</td>
-                                    <td><span class="status-complete">complete</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 173434</th>
-                                    <td>22.11PM</td>
-                                    <td><span class="status-cancelled">cancelled</span></td>
-                                </tr>
+                                @foreach($payments as $payment)
+                                    <tr>
+                                        <th><i class="fa fa-dot-circle-o {{$payment->status('class')}}"></i> {{\Illuminate\Support\Str::limit($payment->wallet_id, 25)}}</th>
+                                        <td>{{$payment->created_at->translatedFormat('d F Y')}}</td>
+                                        <td><span class="status-{{$payment->status('class')}}">{{$payment->status('text')}}</span></td>
+                                    </tr>
+                                @endforeach
+
                                 </tbody>
                             </table>
                         </div>

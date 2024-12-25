@@ -33,9 +33,9 @@ class Customer extends Authenticatable
         return $this->hasOne(CustomerNotificationPermission::class, 'customer_id', 'id');
     }
 
-    public function comments()
+    public function payments()
     {
-       // return $this->hasMany(BusinessComment::class, 'customer_id', 'id');
+       return $this->hasMany(Payment::class, 'user_id', 'id');
     }
     public function city()
     {

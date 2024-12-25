@@ -102,6 +102,7 @@ Route::prefix('user')->as('user.')->group(function (){
         Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('index');
         Route::get('/settings', [\App\Http\Controllers\User\SettingController::class, 'settings'])->name('setting.index');
         Route::get('/buy', [\App\Http\Controllers\User\SettingController::class, 'buy'])->name('buy.index');
+        Route::post('/buy', [\App\Http\Controllers\User\SettingController::class, 'buyToken'])->name('buy.token');
 
     });
 });
