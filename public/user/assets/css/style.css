@@ -8740,6 +8740,7 @@ border-left: 3px solid transparent;
 
     .page-topbar.sidebar_shift .logo-area{
         background-position: left top;
+        max-width: 176px;
     }
 
     .page-topbar .quick-area .info-menu li.sidebar-toggle-wrap{
@@ -8760,11 +8761,14 @@ border-left: 3px solid transparent;
         top: 0px;
         right: 30px;
     }
+    .noMobile{
+        display: none !important;
+    }
 
     .page-topbar .quick-area .info-menu li.message-toggle-wrapper{
             position: fixed;
             top: 0px;
-            right: 190px;
+            right: 30px;
         }
 
     .page-topbar .quick-area .info-menu li.notify-toggle-wrapper{

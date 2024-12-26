@@ -15,20 +15,9 @@
                 <a href="#" class="fs-3 text-gray-800 text-hover-primary fw-bold mb-1">{{$customer->name}}</a>
                 <!--end::Name-->
                 <!--begin::Email-->
-                <a href="tel:{{$customer->phone}}" class="fs-5 fw-semibold text-muted text-hover-primary mb-6">{{formatPhone($customer->phone)}}</a>
+                <a href="" class="fs-5 fw-semibold text-muted text-hover-primary mb-6">{{$customer->created_at->format('d.m.Y H:i')}}</a>
                 <!--end::Email-->
             </div>
-            <!--end::Summary-->
-            @if($customer->type_id == 1)
-                <!--begin::Details toggle-->
-                <div class="d-flex flex-stack fs-4 py-3">
-                    <div class="fw-bold">Detaylar</div>
-                    <!--begin::Badge-->
-                    <div class="badge badge-light-info d-inline">Bayi Kullanıcısı</div>
-                    <!--begin::Badge-->
-                </div>
-            @endif
-
             <!--end::Details toggle-->
             <div class="separator separator-dashed my-3"></div>
             <!--begin::Details content-->
@@ -38,21 +27,15 @@
                 <div class="text-gray-600">ID-{{$customer->id}}</div>
                 <!--begin::Details item-->
                 <!--begin::Details item-->
-                <div class="fw-bold mt-5">Fatura Email</div>
+                <div class="fw-bold mt-5">Email</div>
                 <div class="text-gray-600">
                     <a href="mailto:{{$customer->email}}" class="text-gray-600 text-hover-primary">{{$customer->email}}</a>
                 </div>
                 <!--begin::Details item-->
                 <!--begin::Details item-->
-                <div class="fw-bold mt-5">Address</div>
-                <div class="text-gray-600">
-                    <br />{{$customer->city->name}}
-                    <br />{{$customer->district->name}}</div>
-                <!--begin::Details item-->
-
                 <div class="fw-bold mt-5">Sipariş Sayısı</div>
                 <div class="text-gray-600">
-                    <a href="#" class="text-gray-600 text-hover-primary">{{$customer->orders->count()}}</a>
+                    <a href="#" class="text-gray-600 text-hover-primary">{{$customer->payments->count()}}</a>
                 </div>
                 <!--begin::Details item-->
             </div>

@@ -19,7 +19,8 @@
                 <table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
                     <!--begin::Table body-->
                     <tbody class="fs-6 fw-semibold text-gray-600">
-                    <tr>
+                    {{--
+                        <tr>
                         <td>Telefon</td>
                         <td><a href="tel:{{$customer->phone}}" id="customerNewPhone">{{formatPhone($customer->phone)}}</a></td>
                         <td class="text-end">
@@ -35,6 +36,7 @@
                             </button>
                         </td>
                     </tr>
+                    --}}
                     <tr>
                         <td>Password</td>
                         <td>******</td>

@@ -27,8 +27,7 @@ class CustomerAddRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'phone' => 'required|min:10|unique:customers',
-            'email' => 'required|email|min:4',
+            'email' => 'required|email|min:4|unique:customers',
             'password' => 'required|min:8',
         ];
     }
@@ -37,11 +36,31 @@ class CustomerAddRequest extends FormRequest
     {
         return [
             'name' => 'Ad Soyad',
-            'phone' => 'Telefon Numarası',
+            //'phone' => 'Telefon Numarası',
+            'password' => "Şifre",
             'email' => 'E-posta Adresi',
         ];
     }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Ad Soyad alanı gereklidir.',
+            'name.string' => 'Ad Soyad alanı sadece metin içerebilir.',
+            'name.max' => 'Ad Soyad en fazla 255 karakter olabilir.',
 
+            'phone.required' => 'Telefon Numarası alanı gereklidir.',
+            'phone.min' => 'Telefon Numarası en az 10 karakter olmalıdır.',
+            'phone.unique' => 'Bu telefon numarası zaten kayıtlıdır.',
+
+            'email.required' => 'E-posta Adresi alanı gereklidir.',
+            'email.email' => 'Geçerli bir e-posta adresi giriniz.',
+            'email.min' => 'E-posta Adresi en az 4 karakter olmalıdır.',
+            'email.unique' => 'Bu e-posta adresi zaten kayıtlıdır.',
+
+            'password.required' => 'Şifre alanı gereklidir.',
+            'password.min' => 'Şifre en az 8 karakter olmalıdır.',
+        ];
+    }
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response()->json([

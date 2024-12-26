@@ -68,133 +68,19 @@
                     <!--end::Input-->
                 </div>
                 <!--end::Input group-->
-                <!--begin::Row-->
-                <div class="row row-cols-1 row-cols-md-2">
-                    <!--begin::Col-->
-                    <div class="col">
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-semibold mb-2">
-                                <span class="required">Email</span>
-                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Email address must be active"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="email" class="form-control form-control-solid" placeholder="" name="email" value="{{$customer->email}}" />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
-                    </div>
-                    <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col">
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-semibold mb-2">
-                                <span>Randevu Telefonu</span>
-                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Email address must be active"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="text" class="form-control form-control-solid" data-inputmask="'mask': '(999) 999-9999'" placeholder="Randevu telefonu" name="app_phone" value="{{$customer->app_phone}}" />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
-                    </div>
-                    <!--end::Col-->
+                <!--begin::Input group-->
+                <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class="fs-6 fw-semibold mb-2">
+                        <span class="required">Email</span>
+                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Email address must be active"></i>
+                    </label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    <input type="email" class="form-control form-control-solid" placeholder="" name="email" value="{{$customer->email}}" />
+                    <!--end::Input-->
                 </div>
-                <div class="row row-cols-1 row-cols-md-2">
-                    <!--begin::Col-->
-                    <div class="col">
-                        <div class="d-flex flex-column mb-7 fv-row">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-semibold mb-2">
-                                <span class="required">Şehir</span>
-                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Country of origination"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <select name="city_id" id="city_select" aria-label="Şehir Seçiniz" class="form-select form-select-solid fw-bold">
-                                <option value="">Şehir Seçiniz</option>
-                                @foreach($cities as $city)
-                                    <option value="{{$city->id}}" @selected($city->id == $customer->city_id)>{{$city->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col">
-                        <!--begin::Input group-->
-                        <div class="d-flex flex-column mb-7 fv-row">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-semibold mb-2">
-                                <span class="required">İlçe</span>
-                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Eğer Bu Liste Boş ise şehir seçmeniz gerekmektedir"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <select name="district_id" id="district_select" class="form-select form-select-solid fw-bold">
-                                <option value="">İlçe Seçiniz</option>
-
-                            </select>
-                        </div>
-                        <!--end::Input group-->
-                    </div>
-
-                </div>
-
-                <div class="row row-cols-1 row-cols-md-2">
-                    <!--begin::Col-->
-                    <div class="col">
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-semibold mb-2">
-                                <span class="required">Doğum Tarihi</span>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="date" class="form-control form-control-solid" placeholder="" name="birthday" value="{{$customer->birthday}}" />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
-                    </div>
-                    <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col">
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-semibold mb-2">
-                                <span>Cinsiyet</span>
-                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Email address must be active"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <div class="d-flex">
-                                <div class="form-check form-check-custom form-check-solid form-check-lg me-2">
-                                    <input class="form-check-input" name="gender"  @checked($customer->gender == "1") type="radio" value="1" id="flexCheckboxLg1"/>
-                                    <label class="form-check-label" for="flexCheckboxLg1">
-                                        Kadın
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-custom form-check-solid form-check-lg">
-                                    <input class="form-check-input" name="gender" @checked($customer->gender == "2") type="radio" value="2" id="flexCheckboxLg2"/>
-                                    <label class="form-check-label" for="flexCheckboxLg2">
-                                        Erkek
-                                    </label>
-                                </div>
-                            </div>
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
-                    </div>
-
-                    <!--end::Col-->
-                </div>
+                <!--end::Input group-->
 
                 <!--end::Row-->
                 <div class="d-flex justify-content-end">

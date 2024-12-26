@@ -30,12 +30,7 @@
                            href="#kt_ecommerce_customer_advanced">Güvenlik ve İzinler</a>
                     </li>
                     <!--end:::Tab item-->
-                    <!--begin:::Tab item-->
-                    <li class="nav-item">
-                        <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab"
-                           href="#kt_ecommerce_customer_comments">Yorumlar</a>
-                    </li>
-                    <!--end:::Tab item-->
+
                     <!--begin:::Tab item-->
                     <li class="nav-item">
                         <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab"
@@ -49,7 +44,6 @@
                     @include('admin.customer.detail.component.tabs.tab1')
                     @include('admin.customer.detail.component.tabs.tab2')
                     @include('admin.customer.detail.component.tabs.tab3')
-                    @include('admin.customer.detail.component.tabs.tab4')
                     @include('admin.customer.detail.component.tabs.tab5')
                 </div>
                 <!--end:::Tab content-->
@@ -57,16 +51,13 @@
             <!--end::Content-->
         </div>
         <!--end::Layout-->
-
-        @include('admin.customer.detail.modals.update-phone')
-        @include('admin.customer.detail.modals.update-password')
-        @include('admin.customer.detail.modals.verify')
-        @include('admin.customer.detail.modals.edit-comment')
-        @include('admin.customer.detail.modals.add-notification')
-
         <!--end::Modals-->
     </div>
-
+    @include('admin.customer.detail.modals.update-phone')
+    @include('admin.customer.detail.modals.update-password')
+    @include('admin.customer.detail.modals.verify')
+    @include('admin.customer.detail.modals.edit-comment')
+    @include('admin.customer.detail.modals.add-notification')
 @endsection
 
 @section('scripts')
@@ -86,7 +77,6 @@
     <script src="/assets/js/project/customer/details/update-phone.js"></script>
     <script src="/assets/js/project/customer/details/update-verify.js"></script>
     <script src="/assets/js/project/customer/details/update-comment.js"></script>
-    <script src="/assets/js/project/customer/details/add-notification.js"></script>
 
     <script>
         $('[name="send_sms"]').on('change', function () {

@@ -49,7 +49,7 @@
                             <!--begin::Summary-->
                             <div class="me-3">
                                 <div class="d-flex align-items-center">
-                                    <div class="fs-4 fw-bold">{{$notification->title}}</div>
+                                    <div class="fs-4 fw-bold">{{$notification->getTitle()}}</div>
                                     @if($notification->status == 1)
                                         <div class="badge badge-light-success ms-5">Görüntülendi</div>
                                     @else
@@ -77,7 +77,7 @@
                         <div class="d-flex flex-column pb-5">
 
                             <div class="text-muted">
-                                {!! $notification->content !!}
+                                {!! $notification->getDescription() !!}
                             </div>
                         </div>
                         <!--end::Details-->

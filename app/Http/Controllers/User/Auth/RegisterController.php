@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\User\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -41,21 +42,41 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    public function showRegistrationForm()
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        return view('user.auth.register');
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed'
+        ], [
+            'name.required' => trans('Ad Soyad alanı zorunludur.'),
+            'email.required' => trans('E-Posta alanı zorunludur.'),
+            'email.email' => trans('E-Posta adresi geçerli bir e-posta adresi olmalıdır.'),
+            'password.required' => trans("Şifre alanı zorunludur."),
+            'password.confirmed' => trans("Şifreler uyuşmuyor.")
+        ],[
+            'name' => trans('Ad Soyad'),
+            'email' => trans('E-Posta'),
+            'password' => trans('Şifre')
+        ]);
+
+        $user = $this->create($request->all());
+        $this->guard()->login($user);
+        return to_route('user.panel.index')->with('response', [
+            'status' => 'success',
+            'message' => trans('Hesabınız Başarıyla Oluşturuldu.')
         ]);
     }
 
+    public function guard()
+    {
+        return auth('user');
+    }
     /**
      * Create a new user instance after a valid registration.
      *
@@ -64,7 +85,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

@@ -11,59 +11,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-12">
-        <section class="box nobox marginBottom0">
-            <div class="content-body">
-                <div class="row">
-
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="r4_counter db_box">
-                            <div class="icon-after">
-                                <img src="/user/assets/icons/ico-lg.png" alt="">
-                            </div>
-                            <div class="cryp-icon">
-                                <img src="/user/assets/icons/sec-level3.png" class='mt-10' alt="">
-                            </div>
-                            <div class="stats">
-                                <h3 class="mb-5">$ 5,019,034</h3>
-                                <span>Your Coin Worth at Launch </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="r4_counter db_box">
-                            <div class="icon-after">
-                                <img src="/user/assets/icons/ico-lg.png" alt="">
-                            </div>
-                            <div class="cryp-icon">
-                                <img src="/user/assets/icons/sec-level2.png" class='mt-10' alt="">
-                            </div>
-                            <div class="stats">
-                                <h3 class="mb-5">126 ANGELX</h3>
-                                <span>Total BDAG Balance </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="r4_counter db_box">
-                            <div class="icon-after">
-                                <img src="/user/assets/icons/ico-lg.png" alt="">
-                            </div>
-                            <div class="cryp-icon">
-                                <img src="/user/assets/icons/sec-level1.png" class='mt-10' alt="">
-                            </div>
-                            <div class="stats">
-                                <h3 class="mb-5">903 ANGELX</h3>
-                                <span>Referral Earnings</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- End .row -->
-            </div>
-        </section>
-    </div>
+    @include('user.home.parts.summary-box')
 
     <div class="clearfix"></div>
     <!-- MAIN CONTENT AREA STARTS -->
@@ -75,7 +23,7 @@
     <div class="col-lg-6">
         <section class="box has-border-left-3">
             <header class="panel_header">
-                <h2 class="title pull-left">Top ICO Traders</h2>
+                <h2 class="title pull-left">{{__('En İyi Angelx Yatırımcıları')}}</h2>
                 <div class="actions panel_actions pull-right">
                     <a class="box_toggle fa fa-chevron-down"></a>
                     <a class="box_close fa fa-times"></a>
@@ -83,122 +31,31 @@
             </header>
             <div class="content-body">
                 <div class="row">
+                    @php
+                        // Kullanıcıların maksimum token miktarını al
+                        $maxTokens = $topUserTokens->max(fn($user) => $user->total_tokens);
+                    @endphp
                     <div class="col-xs-12">
-                        <div class="trader-buy golden">
-                            <h6 class="angle-round">Nighy Strotman<span class="number">2,892,638 Tokens</span></h6>
-                            <div class="progress progress-cls">
-                                <div class="progress-bar has-gradient-to-right-bottom" style="width:79.27% !important;">760.565 $</div>
+                        @foreach($topUserTokens as $user)
+                            @php
+                                // Bu kullanıcının token miktarını maksimum token miktarına oranla
+                                $progressPercentage = $maxTokens > 0 ? ($user->totalToken() / $maxTokens) * 100 : 0;
+                            @endphp
+                            <div class="trader-buy golden">
+                                <h6 class="angle-round">{{$user->name}}<span class="number">{{$user->totalToken()}} Token</span></h6>
+                                <div class="progress progress-cls">
+                                    <div class="progress-bar has-gradient-to-right-bottom" style="width:{{$progressPercentage}}% !important;">{{$user->totalTokenPrice()}} $</div>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
 
-                        <div class="trader-buy golden">
-                            <h6 class="angle-round">Jack Nelison<span class="number">1,984,342 Tokens</span></h6>
-                            <div class="progress progress-cls">
-                                <div class="progress-bar has-gradient-to-right-bottom" style="width:75.27% !important;">623.583 $</div>
-                            </div>
-                        </div>
-
-                        <div class="trader-buy golden">
-                            <h6 class="angle-round">Johan Charter<span class="number">1,745,070 Tokens</span></h6>
-                            <div class="progress progress-cls">
-                                <div class="progress-bar has-gradient-to-right-bottom" style="width:69.27% !important;">500.739 $</div>
-                            </div>
-                        </div>
-
-                        <div class="trader-buy silver">
-                            <h6 class="angle-round">Mark Strotman<span class="number">1,200,000 Tokens</span></h6>
-                            <div class="progress progress-cls">
-                                <div class="progress-bar has-gradient-to-right-bottom" style="width:65.27% !important;">360.739 $</div>
-                            </div>
-                        </div>
-
-                        <div class="trader-buy silver">
-                            <h6 class="angle-round">Nighy Strotman<span class="number">1,000,000 Tokens</span></h6>
-                            <div class="progress progress-cls">
-                                <div class="progress-bar has-gradient-to-right-bottom" style="width:61.27% !important;">245.739 $</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-
-    <div class="col-lg-6">
-        <section class="box has-border-left-3">
-            <header class="panel_header">
-                <h2 class="title pull-left">Total Orders</h2>
-                <div class="actions panel_actions pull-right">
-                    <a class="box_toggle fa fa-chevron-down"></a>
-                    <a class="box_close fa fa-times"></a>
-                </div>
-            </header>
-            <div class="content-body">
-                <div class="row">
-                    <div class="col-xs-12">
-
-                        <div class="table-responsive" data-pattern="priority-columns">
-                            <table id="tech-companies-1" class="table table-small-font no-mb table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Deal ID Number</th>
-                                    <th data-priority="1">Trade Time</th>
-                                    <th data-priority="3">Status</th>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 126515</th>
-                                    <td>17.24AM</td>
-                                    <td><span class="status-complete">complete</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 123675</th>
-                                    <td>18.14AM</td>
-                                    <td><span class="status-pending">pending</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 126515</th>
-                                    <td>20.25AM</td>
-                                    <td><span class="status-pending">pending</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 159034</th>
-                                    <td>21.24AM</td>
-                                    <td><span class="status-cancelled">cancelled</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 136563</th>
-                                    <td>21.50AM</td>
-                                    <td><span class="status-complete">complete</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 177384</th>
-                                    <td>21.59PM</td>
-                                    <td><span class="status-complete">complete</span></td>
-                                </tr>
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 173434</th>
-                                    <td>22.11PM</td>
-                                    <td><span class="status-cancelled">cancelled</span></td>
-                                </tr>
-                                <!-- Repeat -->
-                                <tr>
-                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 1788348</th>
-                                    <td>22.34PM</td>
-                                    <td><span class="status-pending">pending</span></td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
 
                     </div>
                 </div>
             </div>
         </section>
     </div>
-
+    @include('user.home.parts.orders')
 
     <div class="clearfix"></div>
 

@@ -56,10 +56,10 @@
         @endforeach
 
         Swal.fire({
-            title: 'Hata',
+            title: '{{__('Hata!')}}',
             icon: 'error',
             html: errors.join("<br>"),
-            confirmButtonText: "Tamam"
+            confirmButtonText: '{{__('Tamam')}}'
         });
     </script>
 @endif

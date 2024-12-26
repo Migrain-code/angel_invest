@@ -15,13 +15,14 @@
 
         </div>
     </div>
+    @include('user.home.parts.summary-box')
 
     <div class="clearfix"></div>
 
     <div class="col-lg-6">
         <section class="box has-border-left-3">
             <header class="panel_header">
-                <h2 class="title pull-left">Buy Cryptocurrency</h2>
+                <h2 class="title pull-left">{{__('Angelx Satın Al')}}</h2>
                 <div class="actions panel_actions pull-right">
                     <a class="box_toggle fa fa-chevron-down"></a>
                     <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
@@ -51,7 +52,7 @@
 
                                 </div>
 
-                                <label class="form-label">Your Metamask Wallet Address</label>
+                                <label class="form-label">{{__('Cüzdan Adresiniz')}}</label>
                                 <span class="desc"></span>
 
                                 <div class="input-group mb-10">
@@ -65,9 +66,9 @@
 
                                 <div class="col-lg-5 no-pl">
 
-                                    <label class="form-label">Amount</label>
+                                    <label class="form-label">{{__('Tutar')}}</label>
                                     <div class="input-group">
-                                        <input type="text" name="amount" class="form-control" id="dollarPriceInput" placeholder="Exchange amount"
+                                        <input type="text" name="amount" class="form-control" id="dollarPriceInput" placeholder="150"
                                                aria-describedby="basic-addon2">
                                         <span class="input-group-addon" id="basic-addon1">USD</span>
                                     </div>
@@ -85,7 +86,7 @@
                                 </div>
                                 <div class="col-lg-5 no-pr">
 
-                                    <label class="form-label">Total</label>
+                                    <label class="form-label">{{__('Toplam Token')}}</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="cryptoPriceInput" placeholder="Equivalent amount"
                                                aria-describedby="basic-addon2">
@@ -95,7 +96,7 @@
 
                                 <button type="submit"
                                         class="btn btn-primary btn-lg mt-20 "
-                                        style="width:100%">Buy ANGELX</button>
+                                        style="width:100%">{{__('Angelx Satın Al')}}</button>
                             </div>
 
                         </form>
@@ -106,47 +107,8 @@
     </div>
 
 
-    <div class="col-lg-6">
-        <section class="box has-border-left-3">
-            <header class="panel_header">
-                <h2 class="title pull-left">Recent Purchases</h2>
-                <div class="actions panel_actions pull-right">
-                    <a class="box_toggle fa fa-chevron-down"></a>
-                    <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
-                    <a class="box_close fa fa-times"></a>
-                </div>
-            </header>
-            <div class="content-body">
-                <div class="row">
-                    <div class="col-xs-12">
+    @include('user.home.parts.orders')
 
-                        <div class="table-responsive" data-pattern="priority-columns">
-                            <table id="tech-companies-1"
-                                   class="table table-small-font mb-10 table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Deal ID Number</th>
-                                    <th data-priority="1">Trade Time</th>
-                                    <th data-priority="3">Status</th>
-                                </thead>
-                                <tbody>
-                                @foreach($payments as $payment)
-                                    <tr>
-                                        <th><i class="fa fa-dot-circle-o {{$payment->status('class')}}"></i> {{\Illuminate\Support\Str::limit($payment->wallet_id, 25)}}</th>
-                                        <td>{{$payment->created_at->translatedFormat('d F Y')}}</td>
-                                        <td><span class="status-{{$payment->status('class')}}">{{$payment->status('text')}}</span></td>
-                                    </tr>
-                                @endforeach
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
 
     <div class="clearfix"></div>
 @endsection

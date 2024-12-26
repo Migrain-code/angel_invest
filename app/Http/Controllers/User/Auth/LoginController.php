@@ -68,14 +68,15 @@ class LoginController extends Controller
         if (!$user || !Hash::check($request->password, $user->password)) {
             return to_route('user.login')->with('response', [
                 'status' => "error",
-                'message' => "E-posta Adresiniz Veya Şifreniz Hatalı",
+                'message' => trans('E-posta Adresiniz Veya Şifreniz Hatalı'),
             ]);
         }
-        Auth::guard('user')->loginUsingId($user->id);
 
+        $remember = $request->has('remember_me') ? true : false;
+        Auth::guard('user')->login($user, $remember);
         return to_route('user.panel.index')->with('response', [
             'status' => "success",
-            'message' => $user->name. " Hoşgeldiniz",
+            'message' => $user->name. " ". trans('Hoşgeldiniz'),
         ]);
 
     }
@@ -87,7 +88,7 @@ class LoginController extends Controller
         Auth::guard('user')->logout();
         return to_route('user.login')->with('response', [
             'status' => "success",
-            'message' => $user->name. " Oturumunuz Kapatıldı",
+            'message' => $user->name. " ". trans('Oturumunuz Kapatıldı'),
         ]);
     }
 }

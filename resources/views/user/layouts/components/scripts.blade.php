@@ -71,10 +71,10 @@
         @endforeach
 
         Swal.fire({
-            title: 'Hata',
+            title: '{{__('Hata!')}}',
             icon: 'error',
             html: errors.join("<br>"),
-            confirmButtonText: "Tamam"
+            confirmButtonText: '{{__('Tamam')}}'
         });
     </script>
 @endif
@@ -90,6 +90,28 @@
     }
 </style>
 <script>
+    $('.notificationDetail').on('click', function (){
+        var title = $(this).data('title');
+        var message = $(this).data('message');
+        var notification_id = $(this).data('notification');
+        $.ajax({
+            url: '{{route('user.panel.notification.detail')}}',
+            type: 'POST',
+            data: {
+                _token: '{{csrf_token()}}',
+                notification_id: notification_id,
+            }
+        })
+        Swal.fire({
+            title: title,
+            html: message,
+            icon: 'info',
+            confirmButtonText: '{{__('Tamam')}}'
+        });
+    });
+</script>
+<script>
+
     function updateFileCount(input) {
         var fileCountSpan = input.parentElement.querySelector('.file-count');
         if (input.files && input.files.length > 0) {

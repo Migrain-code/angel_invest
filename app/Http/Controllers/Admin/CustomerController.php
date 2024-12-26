@@ -4,13 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerAddRequest;
-use App\Models\BusinessOfficial;
 use App\Models\Customer;
 use App\Models\CustomerNotificationPermission;
 use App\Models\NotificationIcon;
 use App\Models\SmsConfirmation;
 use App\Services\Sms;
-use App\Services\UploadFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\DataTables;
@@ -33,6 +31,15 @@ class CustomerController extends Controller
 
     }
 
+    public function sendNotification(Request $request)
+    {
+        $customer = Customer::find($request->input('customer_id'));
+        $customer->sendNotification($request->title, $request->short_description);
+        return back()->with('response', [
+            'status' => 'success',
+            'message' => 'Bildirim Gönderildi'
+        ]);
+    }
     /**
      * Store a newly created resource in storage.
      */
@@ -41,17 +48,16 @@ class CustomerController extends Controller
         $customer = new Customer();
         $customer->name = $request->input('name');
         $customer->email = $request->input('email');
-        $customer->phone = clearPhone($request->input('phone'));
-        $customer->city_id = $request->input('city_id');
-        $customer->district_id = $request->input('district_id');
+        //$customer->phone = clearPhone($request->input('phone'));
+
         $customer->password = Hash::make($request->input('password'));
-        $customer->gender = $request->input('gender');
+        //$customer->gender = $request->input('gender');
         $customer->status = 0;
         if ($request->hasFile('profilePhoto')) {
             $customer->image = $request->file('profilePhoto')->store('customerImages');
         }
         if ($request->input('send_sms') == "1") {
-            Sms::send($customer->phone, setting('speed_site_title').' Sistemine İçin Giriş Şifreniz : ' . $request->input('password'));
+          //  Sms::send($customer->phone, setting('speed_site_title').' Sistemine İçin Giriş Şifreniz : ' . $request->input('password'));
         }
         if ($customer->save()) {
             $this->addPermission($customer->id);
@@ -86,14 +92,13 @@ class CustomerController extends Controller
     {
         $customer->name = $request->input('name');
         $customer->email = $request->input('email');
-        $customer->app_phone = clearPhone($request->input('app_phone'));
+       /* $customer->app_phone = clearPhone($request->input('app_phone'));
         $customer->gender = $request->input('gender');
         $customer->birthday = $request->input('birthday');
         $customer->city_id = $request->input('city_id');
-        $customer->district_id = $request->input('district_id');
+        $customer->district_id = $request->input('district_id');*/
         if ($request->hasFile('profilePhoto')) {
-            $response = UploadFile::uploadFile($request->file('profilePhoto'));
-            $customer->image = $response["image"]["way"];
+            $customer->image = $request->file('profilePhoto')->store('userImages');
         }
         if ($customer->save()) {
             return response()->json([
@@ -160,7 +165,7 @@ class CustomerController extends Controller
             $customer->password = Hash::make($request->input('password'));
             if ($customer->save()){
                 if ($request->input('send_sms') == "1"){
-                    Sms::send($customer->phone, setting('speed_site_title'). " Sistemine giriş için yöneticiler tarafından oluşturulan yeni şifreniz: ". $request->input('password'));
+                 //   Sms::send($customer->phone, setting('speed_site_title'). " Sistemine giriş için yöneticiler tarafından oluşturulan yeni şifreniz: ". $request->input('password'));
                 }
                 return response()->json([
                    'status' => "success",
@@ -218,6 +223,9 @@ class CustomerController extends Controller
             })
             ->editColumn('name', function ($q) {
                 return createName(route('admin.customer.edit', $q->id), $q->name);
+            })
+            ->addColumn('total_token', function ($q) {
+                return formatPrice($q->totalToken());
             })
             ->editColumn('phone', function ($q) {
                 return createPhone($q->phone, $q->phone);

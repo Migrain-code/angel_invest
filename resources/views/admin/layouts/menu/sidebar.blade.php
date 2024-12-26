@@ -389,7 +389,16 @@
                     </a>
                     <!--end:Menu link-->
                 </div>
-
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link @if(request()->routeIs('admin.payment.*')) active @endif" href="{{route('admin.payment.index')}}">
+                        <span class="menu-icon">
+                            <i class="fa fa-credit-card"></i>
+                        </span>
+                        <span class="menu-title">Ödemeler</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
                 <div class="menu-item">
                     <!--begin:Menu link-->
                     <a class="menu-link @if(request()->routeIs('admin.contact-request.*')) active @endif" href="{{route('admin.contact-request.index')}}">

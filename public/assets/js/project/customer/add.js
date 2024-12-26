@@ -130,7 +130,7 @@ var KTModalCustomersAdd = function () {
                                         errorMessage += "<li>" + error + "</li>";
                                     });
                                     errorMessage += "</ul>";
-
+                                    submitButton.disabled = false;
                                     Swal.fire({
                                         icon: 'error',
                                         title: 'Hata!',

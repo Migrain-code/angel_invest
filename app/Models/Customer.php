@@ -7,13 +7,46 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
 
 
 class Customer extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    protected $fillable = [
+        'name', 'email', 'password'
+    ];
+    public function addToken($payment)
+    {
+        if ($this->checkToken($payment)){
+            return;
+        }
+        $userToken = new UserToken();
+        $userToken->user_id = $this->id;
+        $userToken->payment_id = $payment->id;
+        $userToken->token = $payment->token;
+        $userToken->save();
+    }
 
+    public function cryptoTokens()
+    {
+        return $this->hasMany(UserToken::class, 'user_id', 'id');
+    }
+
+    public function totalToken()
+    {
+        return $this->cryptoTokens()->sum('token');
+    }
+
+    public function totalTokenPrice()
+    {
+        return $this->totalToken() * 0.005;
+    }
+    public function checkToken($payment)
+    {
+        return $this->cryptoTokens()->where('payment_id', $payment->id)->exists();
+    }
     public function device()
     {
         return $this->hasOne(Device::class, 'customer_id', 'id');
@@ -28,6 +61,14 @@ class Customer extends Authenticatable
         return $this->hasMany(CustomerNotificationMobile::class, 'customer_id', 'id')->latest();
     }
 
+    public function readNotifications()
+    {
+        return $this->notifications()->where('status', 1)->get();
+    }
+    public function unreadNotifications()
+    {
+        return $this->notifications()->where('status', 0)->get();
+    }
     public function permissions()
     {
         return $this->hasOne(CustomerNotificationPermission::class, 'customer_id', 'id');
@@ -52,6 +93,16 @@ class Customer extends Authenticatable
         ]);
     }
 
+    public function sendNotification($title, $message)
+    {
+        $notification = new CustomerNotificationMobile();
+        $notification->customer_id  = $this->id;
+        $notification->slug = Str::random(10);
+        $notification->title = $title;
+        $notification->content = $message;
+        $notification->status = 0;
+        $notification->save();
+    }
     public function sendSms($message)
     {
         Sms::send(clearPhone($this->phone), $message);

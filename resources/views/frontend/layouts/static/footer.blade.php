@@ -119,7 +119,19 @@
                         </ul>
                     </div>
                 </div>
+                <div class="col-lg col-md-4 col-6">
+                    <div class="single-footer-items">
+                        <h3>{{__("Çözüm")}}</h3>
 
+                        <ul class="menu-list">
+                            <li><a href="#">{{__('Fırsatlar')}}</a></li>
+                            <li><a href="#">{{__('Neden Blockchain')}}</a></li>
+                            <li><a href="#">{{__('Tokenizasyon')}}</a></li>
+                            <li><a href="#">{{__('Launchpad')}}</a></li>
+                            <li><a href="#">{{__('Staking')}}</a></li>
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="single-footer-items">

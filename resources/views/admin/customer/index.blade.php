@@ -61,9 +61,9 @@
                                 </div>
                             </th>
                             <th class="min-w-125px">Müşteri Adı</th>
-                            <th class="min-w-125px">Telefon</th>
+                            <th class="min-w-125px">E-posta</th>
                             <th class="min-w-125px">Status</th>
-                            <th class="min-w-125px">Konum</th>
+                            <th class="min-w-125px">Token</th>
                             <th class="min-w-125px">Created Date</th>
                             <th class="text-end min-w-70px">Actions</th>
                         </tr>
@@ -95,9 +95,9 @@
         let DATA_COLUMNS = [
             {data: 'id'},
             {data: 'name'},
-            {data: 'phone'},
-            {data: 'status'},
             {data: 'email'},
+            {data: 'status'},
+            {data: 'total_token'},
             {data: 'created_at'},
             {data: 'action'}
         ];

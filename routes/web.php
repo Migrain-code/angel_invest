@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoadMapController;
 use App\Http\Controllers\FaqController;
-
+use App\Http\Controllers\PaymentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -96,14 +96,18 @@ Route::prefix('production')->as('production.')->group(function () {
 Route::prefix('user')->as('user.')->group(function (){
    Route::get('login', [\App\Http\Controllers\User\Auth\LoginController::class, 'showLoginForm'])->name('login');
    Route::get('register', [\App\Http\Controllers\User\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+   Route::post('register', [\App\Http\Controllers\User\Auth\RegisterController::class, 'register'])->name('register');
    Route::post('login', [\App\Http\Controllers\User\Auth\LoginController::class, 'login'])->name('login');
    Route::post('logout', [\App\Http\Controllers\User\Auth\LoginController::class, 'logout'])->name('logout');
     Route::middleware('auth:user')->prefix('dashboard')->as('panel.')->group(function () {
         Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('index');
         Route::get('/settings', [\App\Http\Controllers\User\SettingController::class, 'settings'])->name('setting.index');
+        Route::post('/settings', [\App\Http\Controllers\User\SettingController::class, 'settingUpdate'])->name('setting.update');
         Route::get('/buy', [\App\Http\Controllers\User\SettingController::class, 'buy'])->name('buy.index');
         Route::post('/buy', [\App\Http\Controllers\User\SettingController::class, 'buyToken'])->name('buy.token');
-
+        Route::get('/notification', [\App\Http\Controllers\User\SettingController::class, 'notification'])->name('notification.index');
+        Route::post('/notification-detail', [\App\Http\Controllers\User\SettingController::class, 'notificationDetail'])->name('notification.detail');
+        Route::get('faq', [\App\Http\Controllers\User\SettingController::class, 'faq'])->name('faq.index');
     });
 });
 
@@ -113,12 +117,13 @@ Route::middleware('auth')->prefix('dashboard')->as('admin.')->group(function (){
     Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 
     /*------------------------------Customer Routes-----------------------------------*/
-    /*Route::resource('customer', CustomerController::class);
-    Route::controller(CustomerController::class)->prefix('customer')->as('customer.')->group(function (){
+    Route::resource('customer', \App\Http\Controllers\Admin\CustomerController::class);
+    Route::controller(\App\Http\Controllers\Admin\CustomerController::class)->prefix('customer')->as('customer.')->group(function (){
         Route::post('update/phone', 'updatePhone')->name('updatePhone');
         Route::post('update/phone/verify', 'verifyPhone')->name('verifyPhone');
         Route::post('update/password', 'updatePassword')->name('updatePassword');
-    });*/
+        Route::post('send/notification', 'sendNotification')->name('sendNotification');
+    });
     Route::resource('user', UserController::class);
     Route::resource('slider', SliderController::class); // Sliderlar
     Route::resource('production', ProductionController::class); // Sliderlar
@@ -132,6 +137,7 @@ Route::middleware('auth')->prefix('dashboard')->as('admin.')->group(function (){
     Route::resource('roadmap', RoadMapController::class); //roadmap
     Route::resource('jobRequestForm', JobRequestFormController::class); //iş başvuruları
     Route::resource('faq', FaqController::class); //ss
+    Route::resource('payment', PaymentController::class); //ss
     Route::get('kvkk', [\App\Http\Controllers\Admin\HomeController::class, 'kvkk'])->name('kvkk.index'); //kvkk
     Route::get('info', [\App\Http\Controllers\Admin\HomeController::class, 'info'])->name('info.index'); //kvkk
 

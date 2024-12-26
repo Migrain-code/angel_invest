@@ -24,10 +24,10 @@
 																				</svg>
 																			</span>
                             <!--end::Svg Icon-->
-                            <div class="ms-2">4,571
-                                <span class="text-muted fs-4 fw-semibold">Puan Kazanıldı</span></div>
+                            <div class="ms-2">{{formatPrice($customer->totalToken())}}
+                                <span class="text-muted fs-4 fw-semibold">Token Alındı</span></div>
                         </div>
-                        <div class="fs-7 fw-normal text-muted">Randevu alımında kazanılan parapuanları.</div>
+                        <div class="fs-7 fw-normal text-muted">Toplam Alınan Token Adedi.</div>
                     </div>
                 </div>
                 <!--end::Card body-->
@@ -47,8 +47,8 @@
 																		</svg>
 																	</span>
                     <!--end::Svg Icon-->
-                    <div class="text-white fw-bold fs-2 mt-5">Sipariş Verdi</div>
-                    <div class="fw-semibold text-white">Bugüne Kadar Yapılan Sipariş Sayısı: <b>{{$customer->orders->count()}}</b></div>
+                    <div class="text-white fw-bold fs-2 mt-5">{{$customer->payments->count()}} Sipariş Verdi</div>
+                    <div class="fw-semibold text-white">Toplam Sipariş Sayısı<b></b></div>
                 </div>
                 <!--end::Body-->
             </a>
@@ -85,29 +85,29 @@
                 <!--end::Table head-->
                 <!--begin::Table body-->
                 <tbody class="fs-6 fw-semibold text-gray-600">
-                    @forelse($customer->orders as $order)
+                    @forelse($customer->payments as $payment)
                         <tr>
                             <!--begin::order=-->
                             <td>
-                                <a href="../sales/details.html" class="text-gray-600 text-hover-primary mb-1">#234234</a>
+                                <a href="{{route('admin.payment.edit', $payment->id)}}" target="_blank" class="text-gray-600 text-hover-primary mb-1">#{{$payment->id}}</a>
                             </td>
                             <!--end::order=-->
                             <!--begin::Business=-->
                             <td>
-                                <a href="" class="text-gray-600 text-hover-primary mb-1">#Şapka</a>
+                                <a href="" class="text-gray-600 text-hover-primary mb-1">{{$payment->token}} Angelx</a>
                             </td>
                             <!--end::Business=-->
                             <!--begin::Status=-->
                             <td>
-                                564
+                                {!! $payment->status('html') !!}
                             </td>
                             <!--end::Status=-->
                             <!--begin::Amount=-->
-                            <td>1</td>
+                            <td>{{$payment->currency}} $</td>
                             <!--end::Amount=-->
 
                             <!--begin::Date=-->
-                            <td>654</td>
+                            <td>{{$payment->created_at->format('d.m.Y H:i:s')}}</td>
                             <!--end::Date=-->
                         </tr>
                     @empty

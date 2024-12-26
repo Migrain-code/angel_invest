@@ -12,23 +12,28 @@ class Payment extends Model
 
     const STATUS_LIST = [
         0 => [
+            'html' => '<span class="badge badge-warning">Onay Bekliyor</span>',
             'text' => 'Onay Bekliyor',
             'class' => 'pending',
             "color" => "#fff04f"
         ],
         1 => [
+            'html' => '<span class="badge badge-success">Onaylandı</span>',
             'text' => 'Onaylandı',
             'class' => 'approved',
             "color" => "#6aab73"
         ],
         2 => [
-            'text' => 'İptal Edildi',
+            'html' => '<span class="badge badge-danger">İptal Edildi</span>',
             'class' => 'cancelled',
             "color" => "#4a7750"
         ],
 
     ];
-
+    public function user()
+    {
+        return $this->hasOne(Customer::class, 'id', 'user_id');
+    }
     public function status($type)
     {
         return self::STATUS_LIST[$this->status][$type] ?? null;

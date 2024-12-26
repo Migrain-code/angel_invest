@@ -96,19 +96,7 @@
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-semibold mb-2">
-                                <span class="required">Telefon Numarası</span>
-                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Telefon Numarası Zorunlu"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="text" class="form-control form-control-solid phone" data-inputmask="'mask': '(999) 999-9999'" placeholder="" name="phone" value="" />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
+
                         <!--begin::Input group-->
                         <div class="fv-row mb-7">
                             <!--begin::Label-->
@@ -121,110 +109,7 @@
                             <input type="password" class="form-control form-control-solid" placeholder="" name="password" value="" />
                             <!--end::Input-->
                         </div>
-                        <div class="fv-row mb-7">
-                            <!--begin::Wrapper-->
-                            <div class="d-flex flex-stack">
-                                <!--begin::Label-->
-                                <div class="me-5">
-                                    <!--begin::Label-->
-                                    <label class="fs-6 fw-semibold">Şifre Müşteriye Gönderilsin mi?</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <div class="fs-7 fw-semibold text-muted">Bu seçenek seçildiğinde şifre bu alana girdiğiniz telefon numarasına otomatik iletilir</div>
-                                    <!--end::Input-->
-                                </div>
-                                <!--end::Label-->
-                                <!--begin::Switch-->
-                                <label class="form-check form-switch form-check-custom form-check-solid">
-                                    <!--begin::Input-->
-                                    <input class="form-check-input" name="send_sms" type="checkbox" value="1" id="kt_modal_add_customer_billing" checked="checked">
-                                    <!--end::Input-->
-                                    <!--begin::Label-->
-                                    <span class="form-check-label fw-semibold text-muted" id="customerSendSms" for="kt_modal_add_customer_billing">Evet</span>
-                                    <!--end::Label-->
-                                </label>
-                                <!--end::Switch-->
-                            </div>
-                            <!--begin::Wrapper-->
-                        </div>
-                        <!--end::Input group-->
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-semibold mb-2">
-                                <span class="required">Cinsiyet</span>
-                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Cinsiyet Zorunlu"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <div class="d-flex">
-                                <div class="form-check form-check-custom form-check-solid form-check-lg me-2">
-                                    <input class="form-check-input" name="gender" checked type="radio" value="1" id="flexCheckboxLg1"/>
-                                    <label class="form-check-label" for="flexCheckboxLg1">
-                                        Kadın
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-custom form-check-solid form-check-lg">
-                                    <input class="form-check-input" name="gender" type="radio" value="2" id="flexCheckboxLg2"/>
-                                    <label class="form-check-label" for="flexCheckboxLg2">
-                                        Erkek
-                                    </label>
-                                </div>
-                            </div>
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
-                        <!--end::Input group-->
-                        <!--begin::Billing toggle-->
-                        <div class="fw-bold fs-3 rotate collapsible mb-7" data-bs-toggle="collapse" href="#kt_modal_add_customer_billing_info" role="button" aria-expanded="false" aria-controls="kt_customer_view_details">Adres Bilgileri
-                            <span class="ms-2 rotate-180">
-																<!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                <span class="svg-icon svg-icon-3">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor" />
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </span>
-                        </div>
-                        <!--end::Billing toggle-->
-                        <!--begin::Billing form-->
-                        <div id="kt_modal_add_customer_billing_info" class="collapse show">
 
-                            <!--begin::Input group-->
-                            <div class="d-flex flex-column mb-7 fv-row">
-                                <!--begin::Label-->
-                                <label class="fs-6 fw-semibold mb-2">
-                                    <span class="required">Şehir</span>
-                                    <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Country of origination"></i>
-                                </label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <select name="city_id" id="city_select" aria-label="Şehir Seçiniz" data-control="select2" data-placeholder="Şehir Seçiniz..." data-dropdown-parent="#kt_modal_add_customer" class="form-select form-select-solid fw-bold">
-                                    <option value="">Şehir Seçiniz</option>
-                                    @foreach($cities as $city)
-                                        <option value="{{$city->id}}">{{$city->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="d-flex flex-column mb-7 fv-row">
-                                <!--begin::Label-->
-                                <label class="fs-6 fw-semibold mb-2">
-                                    <span class="required">İlçe</span>
-                                    <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Eğer Bu Liste Boş ise şehir seçmeniz gerekmektedir"></i>
-                                </label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <select name="district_id" id="district_select" aria-label="Şehir Seçiniz" data-control="select2" data-placeholder="Şehir Seçiniz..." data-dropdown-parent="#kt_modal_add_customer" class="form-select form-select-solid fw-bold">
-                                    <option value="">İlçe Seçiniz</option>
-
-                                </select>
-                            </div>
-                            <!--end::Input group-->
-                        </div>
-                        <!--end::Billing form-->
                     </div>
                     <!--end::Scroll-->
                 </div>

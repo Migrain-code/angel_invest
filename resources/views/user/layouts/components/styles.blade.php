@@ -16,4 +16,19 @@
 <!-- CORE CSS TEMPLATE - START -->
 <link href="/user/assets/css/style.css" rel="stylesheet" type="text/css">
 <link href="/user/assets/css/responsive.css" rel="stylesheet" type="text/css">
+<style>
+    .page-topbar .logo-area {
+        background: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .page-topbar .logo-area img{
+        max-width: 176px;
+    }
+    .page-topbar.sidebar_shift .logo-area {
+       background: none;
+    }
+</style>
 @yield('styles')
