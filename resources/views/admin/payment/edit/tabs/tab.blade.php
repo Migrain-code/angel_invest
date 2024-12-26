@@ -10,6 +10,14 @@
         </div>
         <div class="fv-row mb-7">
             <!--begin::Label-->
+            <label class="required fs-6 fw-semibold mb-2">TX ID</label>
+            <!--end::Label-->
+            <!--begin::Input-->
+            <input type="text" class="form-control form-control-solid" placeholder="" name="tx_id" value="{{$payment->tx_id}}" />
+            <!--end::Input-->
+        </div>
+        <div class="fv-row mb-7">
+            <!--begin::Label-->
             <label class="required fs-6 fw-semibold mb-2">Kullanıcı Cüzdan Kimliği</label>
             <!--end::Label-->
             <!--begin::Input-->

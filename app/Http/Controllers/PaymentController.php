@@ -61,6 +61,7 @@ class PaymentController extends Controller
         $payment->currency = $request->currency;
         $payment->wallet_id = $request->wallet_id;
         $payment->system_wallet_id = $request->system_wallet_id;
+        $payment->tx_id = $request->tx_id;
         if ($payment->save()){
             return to_route('admin.payment.index')->with('response', [
                 'status' => 'success',

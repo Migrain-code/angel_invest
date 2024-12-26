@@ -62,7 +62,16 @@
                                             </span>
                                     <input type="text" id="walletAddress" name="user_wallet_address" class="form-control"  readonly placeholder="OxsD12F32xvW3deG5...">
                                 </div>
+                                <label class="form-label">{{__('Tx ID')}}</label>
+                                <span class="desc"></span>
 
+                                <div class="input-group mb-10">
+                                            <span class="input-group-addon">
+                                                <span class="arrow"></span>
+                                                <img src="/user/assets/icons/wallet-o.png" alt="icon">
+                                            </span>
+                                    <input type="text" name="tx_id" class="form-control" placeholder="...">
+                                </div>
 
                                 <div class="col-lg-5 no-pl">
 

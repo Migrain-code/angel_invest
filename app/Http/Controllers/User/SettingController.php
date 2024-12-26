@@ -70,6 +70,7 @@ class SettingController extends Controller
         $payment->payment_method = 'CRYPTO';
         $payment->currency = $request->amount;
         $payment->token = $tokenAmount;
+        $payment->tx_id = $request->tx_id;
         $payment->save();
 
         if ($payment->save()){
