@@ -20,7 +20,7 @@
         <div class='pull-right'>
             <ul class="info-menu right-links list-inline list-unstyled">
                 <li class="message-toggle-wrapper" style="margin-left: 10px">
-                    <a href="javascript:void(0)" data-toggle="dropdown" onclick="connect();" id="btn-connect" class="btn btn-primary" style="border-radius: 20px;
+                    <a href="javascript:void(0)" data-toggle="modal" data-target="#walletModal"  id="btn-connect" class="btn btn-primary" style="border-radius: 20px;
     background: #287bc6;
     border: none;
     box-shadow: 1px 2px 5px #287bc6;">

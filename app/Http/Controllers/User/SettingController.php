@@ -54,7 +54,7 @@ class SettingController extends Controller
     public function buy()
     {
         $payments = auth('user')->user()->payments()->latest()->get();
-        return view('user.buy.index', compact('payments'));
+        return view('user.buy.index2', compact('payments'));
     }
 
     public function buyToken(Request $request)
