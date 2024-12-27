@@ -153,13 +153,15 @@
                         <h3 class="mt-2" style="color: black; font-weight: bold;font-size: large;"> TrustWallet</h3>
                         <p>TrustWallet Cüzdanınıza Bağlanın</p>
                     </div>
-                    <div class="wallet-option" onclick="connectWalletConnect()">
+                    {{--
+                        <div class="wallet-option" onclick="connectWalletConnect()">
                         <img src="/user/assets/images/walletconnect.png"  alt="WalletConnect" style="width:50px">
                         <h5 class="mt-2" style="color: black; font-weight: bold;font-size: large;">
                             WalletConnect
                         </h5>
                         <p>Bağlanmak için WalletConnect ile tarayın</p>
                     </div>
+                    --}}
                 </div> <!-- Modal Altbilgisi -->
 
             </div>
