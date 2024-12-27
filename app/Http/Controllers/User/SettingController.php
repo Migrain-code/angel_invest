@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use App\Models\Payment;
+use App\Models\SystemWallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -54,11 +55,23 @@ class SettingController extends Controller
     public function buy()
     {
         $payments = auth('user')->user()->payments()->latest()->get();
-        return view('user.buy.index2', compact('payments'));
+        $systemWallets = SystemWallet::where('status', 1)->get();
+        return view('user.buy.index2', compact('payments', 'systemWallets'));
     }
 
     public function buyToken(Request $request)
     {
+        $request->validate([
+           'system_wallet_address' => 'required',
+            'user_wallet_address' => 'required',
+            'tx_id' => 'required',
+            'amount' => 'required',
+        ], [
+            'system_wallet_address.required' => trans('Sistem Cüzdan Adresi alanı zorunludur.'),
+            'user_wallet_address.required' => trans('Kullanıcı Cüzdan Adresi alanı zorunludur.'),
+            'tx_id.required' => trans('Tx Id alanı zorunludur.'),
+            'amount.required' => trans('Miktar alanı zorunludur.'),
+        ]);
         $oneTokenPrice = 0.005;
         $dollarPrice = $request->amount;
         $tokenAmount = $dollarPrice / $oneTokenPrice;

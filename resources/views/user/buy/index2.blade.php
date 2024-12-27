@@ -7,11 +7,7 @@
     <script src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
     <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
     <style>
-        #btn-connect, #disconnectButton {
-            margin: 10px;
-            padding: 10px;
-            font-size: 16px;
-        }
+
         .wallet-option{
             border-bottom: 1px solid #d0d0d0;
             padding: 15px;
@@ -61,26 +57,19 @@
                                     <span class="input-group-addon" id="network">$</span>
 
                                     <div class="input-group-btn" style="width:100%">
-                                        <select type="text" name="system_wallet_address" class="form-control">
-                                            <option selected>BNB (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB
-                                            </option>
-                                            <option value="BNB (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">BNB
-                                                (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB
-                                            </option>
-                                            <option value="USDT (TRC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">USDT
-                                                (TRC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB
-                                            </option>
-                                            <option value="ETH (ERC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">ETH
-                                                (ERC20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB
-                                            </option>
-                                            <option value="USDT (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">USDT
-                                                (BEB20) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB
-                                            </option>
-                                            <option value="SOL (SOLANA) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB">SOL
-                                                (SOLANA) 0x67d8bE5242a822adA9Ea280C608198E1D1d0eCEB
-                                            </option>
-                                        </select>
 
+                                        <select type="text" style="width: 85%;" name="system_wallet_address" class="form-control">
+                                            <option value="">Select Wallet</option>
+                                            @foreach($systemWallets as $systemWallet)
+                                                <option @selected(old('system_wallet_address') == $systemWallet->wallet_id) value="{{$systemWallet->wallet_id}}">
+                                                    {{$systemWallet->wallet_id}}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        <button class="" type="button" onclick="copyButton()" style="width: 15%;height: 50px;display: flex
+;
+    justify-content: center;
+    align-items: center;"><i class="fa fa-copy"></i></button>
                                     </div>
 
                                 </div>
@@ -93,7 +82,7 @@
                                                 <span class="arrow"></span>
                                                 <img src="/user/assets/icons/wallet-o.png" alt="icon">
                                             </span>
-                                    <input type="text" id="walletAddress" name="user_wallet_address"
+                                    <input type="text" id="walletAddress" value="{{old('user_wallet_address')}}" name="user_wallet_address"
                                            class="form-control" readonly placeholder="OxsD12F32xvW3deG5...">
                                 </div>
                                 <label class="form-label">{{__('Tx ID')}}</label>
@@ -104,15 +93,15 @@
                                                 <span class="arrow"></span>
                                                 <img src="/user/assets/icons/wallet-o.png" alt="icon">
                                             </span>
-                                    <input type="text" name="tx_id" class="form-control" placeholder="...">
+                                    <input type="text" name="tx_id" class="form-control" value="{{old('tx_id')}}" placeholder="...">
                                 </div>
 
                                 <div class="col-lg-5 no-pl">
 
                                     <label class="form-label">{{__('Tutar')}}</label>
                                     <div class="input-group">
-                                        <input type="text" name="amount" class="form-control" id="dollarPriceInput"
-                                               placeholder="150"
+                                        <input type="text" name="amount" value="{{old('amount')}}" class="form-control" id="dollarPriceInput"
+                                               placeholder="1000"
                                                aria-describedby="basic-addon2">
                                         <span class="input-group-addon" id="basic-addon1">USD</span>
                                     </div>
@@ -129,11 +118,10 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-5 no-pr">
-
                                     <label class="form-label">{{__('Toplam Token')}}</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="cryptoPriceInput"
-                                               placeholder="Equivalent amount"
+                                               placeholder="Total Token"
                                                aria-describedby="basic-addon2">
                                         <span class="input-group-addon" id="basic-addon2">ANGELX</span>
                                     </div>
@@ -192,7 +180,12 @@
             var cryptoPrice = dollarPrice / oneTokenPrice;
             $('#cryptoPriceInput').val(cryptoPrice);
         });
-
+        $('#cryptoPriceInput').on('input', function () {
+            let oneTokenPrice = 0.005;
+            var dollarPrice = $(this).val();
+            var cryptoPrice = dollarPrice * oneTokenPrice;
+            $('#dollarPriceInput').val(cryptoPrice);
+        });
     </script>
     <script>
         let web3Modal;
@@ -222,6 +215,14 @@
                 cacheProvider: false,
                 providerOptions
             });
+
+            // Otomatik olarak cüzdan bağlamak için kontrol
+            const cachedAddress = localStorage.getItem('walletAddress');
+            if (cachedAddress) {
+                document.getElementById('walletAddress').value = cachedAddress;
+                document.getElementById('btn-connect').style.display = 'none';
+                document.getElementById('disconnectButton').style.display = 'inline-block';
+            }
         });
 
         function openModal() {
@@ -237,15 +238,14 @@
             if (window.ethereum && window.ethereum.isMetaMask) {
                 const MMSDK = new MetaMaskSDK.MetaMaskSDK({
                     dappMetadata: {
-                        name: "Example Pure JS Dapp",
+                        name: "Angelx DAPP",
                     },
                     infuraAPIKey: "4973a0f2383a47999fedf147bf68737f",
-                    // Other options.
                 });
                 const accounts = await MMSDK.connect();
                 if (accounts.length > 0) {
                     const walletAddressTex = accounts[0];
-                    document.getElementById('walletAddress').value = walletAddressTex;
+                    handleWalletConnected(walletAddressTex);
                 }
             } else {
                 alert('MetaMask is not installed. Please install it to use this option.');
@@ -261,8 +261,6 @@
             } else {
                 alert('TrustWallet is not installed. Please install it to use this option.');
             }
-            await provider.enable();
-            connectWallet();
         }
 
         async function connectWalletConnect() {
@@ -276,18 +274,26 @@
             const accounts = await web3.eth.getAccounts();
             if (accounts.length > 0) {
                 const walletAddress = accounts[0];
-                document.getElementById('walletAddress').value = walletAddress;
-                document.getElementById('btn-connect').style.display = 'none';
-                document.getElementById('disconnectButton').style.display = 'inline-block';
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Wallet Connected Successfully',
-                });
+                handleWalletConnected(walletAddress);
             }
         }
 
+        function handleWalletConnected(walletAddress) {
+            document.getElementById('walletAddress').value = walletAddress;
+            document.getElementById('btn-connect').style.display = 'none';
+            document.getElementById('disconnectButton').style.display = 'inline-block';
+
+            // Cüzdan adresini localStorage'a kaydet
+            localStorage.setItem('walletAddress', walletAddress);
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Wallet Connected Successfully',
+            });
+        }
+
         function disconnect() {
-            if (provider.close) {
+            if (provider && provider.close) {
                 provider.close();
             }
             provider = null;
@@ -295,10 +301,40 @@
             document.getElementById('walletAddress').value = "";
             document.getElementById('btn-connect').style.display = 'inline-block';
             document.getElementById('disconnectButton').style.display = 'none';
+
+            // Cüzdan adresini localStorage'dan sil
+            localStorage.removeItem('walletAddress');
+
             Toast.fire({
                 icon: 'success',
                 title: 'Disconnected from wallet.',
             });
+        }
+    </script>
+    <script>
+        function copyButton(){
+
+            let copWalletAddress = $('select[name="system_wallet_address"]').val();
+            if(copWalletAddress == ""){
+                Toast.fire({
+                    icon: 'info',
+                    title: '{{__("Lütfen Bir Cüzdan Seçiniz.")}}',
+                });
+            } else{
+                let splittedAddress = copWalletAddress.split('|');
+                let textWalletAddress = splittedAddress[1];
+                navigator.clipboard.writeText(textWalletAddress) .then(() => {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Wallet Address Copied',
+                    });
+                })
+                .catch(err => {
+                    console.error('Failed to copy wallet address: ', err);
+                });
+            }
+            console.log(copWalletAddress);
+
         }
     </script>
 
