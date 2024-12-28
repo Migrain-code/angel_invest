@@ -22,7 +22,7 @@
                         </div>
                         <div class="single-box">
                             <div class="heading2">
-
+                                @dd(app()->getLocale())
                                 <h4><a href="#">{{$reference->getName()}}</a></h4>
                                 <div class="space16"></div>
                                 <p>
