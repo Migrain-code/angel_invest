@@ -11,14 +11,14 @@
 
 </head>
 <body class="body body2" id="home">
-{{--
+
     <div class="preloader preloader2">
         <div class="loading-container">
             <div class="loading loading2"></div>
             <div id="loading-icon"><img src="/frontend/assets/img/logo/Angelx.svg" alt=""></div>
         </div>
     </div>
---}}
+
     <div class="paginacontainer">
         <div class="progress-wrap progress-wrap2">
             <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">

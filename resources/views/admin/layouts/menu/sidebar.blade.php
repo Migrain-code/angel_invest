@@ -364,8 +364,26 @@
                     </a>
                     <!--end:Menu link-->
                 </div>
-
-
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link @if(request()->routeIs('admin.faq.*')) active @endif" href="{{route('admin.faq.index')}}">
+                        <span class="menu-icon">
+                            <i class="bi bi-question-circle"></i>
+                        </span>
+                        <span class="menu-title">S.S.S</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link @if(request()->routeIs('admin.roadmap.*')) active @endif" href="{{route('admin.roadmap.index')}}">
+                        <span class="menu-icon">
+                            <i class="bi bi-map"></i>
+                        </span>
+                        <span class="menu-title">Roadmap</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
                 {{--
                     <div class="menu-item">
                     <!--begin:Menu link-->

@@ -40,7 +40,7 @@
                     <div class="tk_countdown">
                         <div class="tk_counter_inner" style="padding: 0px;">
                             <div class="image1">
-                                <img src="{{image(setting('token_banner_image'))}}" alt="">
+                                <img src="{{image(setting('token_banner_image'))}}" style="border-radius: 50%;" alt="">
                             </div>
                         </div>
                     </div>
