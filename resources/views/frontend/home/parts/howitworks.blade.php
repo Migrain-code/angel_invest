@@ -22,7 +22,7 @@
                         </div>
                         <div class="single-box">
                             <div class="heading2">
-                                <h4><a href="#">{{$reference->getName()}}</a></h4>
+                                <h4><a href="#">dsadsa</a></h4>
                                 <div class="space16"></div>
                                 <p>
                                     {{$reference->getDescription()}}
