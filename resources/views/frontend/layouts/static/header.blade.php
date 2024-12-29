@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{setting('speed_site_title')." | "}}@yield('title', trans('Anasayfa'))</title>
     <meta name="description" content="@yield('description', trans(setting('speed_meta_descriptions')))">
-    <meta name="keyword" content="angelx, meme token, solana, raydium, angelx, angelx coin, shitcoin, meme coin" />
+    <meta name="keyword" content="angelx, launchpad, bnb, beb20, angel, angel investor club, coin,token" />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="{{env('APP_URL')}}">
