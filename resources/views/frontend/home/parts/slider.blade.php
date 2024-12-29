@@ -49,6 +49,13 @@
                             <img src="{{image($slider->image)}}" alt="">
                         </div>
 
+                        <div class="image3 animate1 reveal">
+                            <img src="{{image($slider->image_2)}}" alt="">
+                        </div>
+
+                        <div class="image4 animate3 reveal ">
+                            <img src="{{image($slider->image_3)}}" alt="">
+                        </div>
                     </div>
                 </div>
             </div>

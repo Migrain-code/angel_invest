@@ -40,6 +40,12 @@ class SliderController extends Controller
         if ($request->hasFile('image')) {
             $slider->image = $request->file('image')->store('slider');
         }
+        if ($request->hasFile('image_2')) {
+            $slider->image_2 = $request->file('image_2')->store('slider');
+        }
+        if ($request->hasFile('image_3')) {
+            $slider->image_3 = $request->file('image_3')->store('slider');
+        }
         if ($slider->save()){
             return redirect()->route('admin.slider.index')->with('response', [
                 'status' => "success",
@@ -68,6 +74,12 @@ class SliderController extends Controller
         $slider->description = $request->descriptions;
         if ($request->hasFile('image')) {
             $slider->image = $request->file('image')->store('slider');
+        }
+        if ($request->hasFile('image_2')) {
+            $slider->image_2 = $request->file('image_2')->store('slider');
+        }
+        if ($request->hasFile('image_3')) {
+            $slider->image_3 = $request->file('image_3')->store('slider');
         }
         if ($slider->save()){
             return redirect()->route('admin.slider.index')->with('response', [
