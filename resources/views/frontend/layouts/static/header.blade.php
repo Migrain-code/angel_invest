@@ -13,7 +13,7 @@
     <meta property="og:title" content="{{setting('speed_site_title')}}">
     <meta property="og:description"
           content="{{trans(setting('speed_meta_descriptions'))}}">
-    <meta property="og:image" content="{{asset('storage/'.setting('favicon'))}}">
+    <meta property="og:image" content="{{asset('storage/'.setting('logo'))}}">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
     <meta name="twitter:title" content="{{setting('speed_site_title')}}">
     <meta name="twitter:description"
           content="{{trans(setting('speed_meta_descriptions'))}}">
-    <meta name="twitter:image" content="{{asset('storage/'.setting('favicon'))}}">
+    <meta name="twitter:image" content="{{asset('storage/'.setting('logo'))}}">
 
     <!-- Discord Meta Tags -->
     <meta name="discord:card" content="summary_large_image">
@@ -31,7 +31,7 @@
     <meta name="discord:title" content="{{setting('speed_site_title')}}">
     <meta name="discord:description"
           content="{{trans(setting('speed_meta_descriptions'))}}">
-    <meta name="discord:image" content="{{asset('storage/'.setting('favicon'))}}">
+    <meta name="discord:image" content="{{asset('storage/'.setting('logo'))}}">
 
     <!-- Telegram Meta Tags -->
     <meta name="telegram:card" content="summary_large_image">
@@ -40,7 +40,7 @@
     <meta name="telegram:title" content="{{setting('speed_site_title')}}">
     <meta name="telegram:description"
           content="{{trans(setting('speed_meta_descriptions'))}}">
-    <meta name="telegram:image" content="{{asset('storage/'.setting('favicon'))}}">
+    <meta name="telegram:image" content="{{asset('storage/'.setting('logo'))}}">
     <!-- Favicon -->
     @include('frontend.layouts.components.styles')
 
