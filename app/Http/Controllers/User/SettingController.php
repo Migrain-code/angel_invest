@@ -89,7 +89,7 @@ class SettingController extends Controller
         if ($payment->save()){
             return back()->with('response', [
                'status' => "success",
-               'message' => "Ödeme İşleminiz Başarılı. Ödemeniz incelendikten sonra tokenleriniz hesabınıza yüklenecektir."
+               'message' => trans("Ödeme İşleminiz Başarılı. Ödemeniz incelendikten sonra tokenleriniz hesabınıza yüklenecektir.")
             ]);
         }
     }
