@@ -5,43 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{setting('speed_site_title')." | "}}@yield('title', trans('Anasayfa'))</title>
     <meta name="description" content="@yield('description', trans(setting('speed_meta_descriptions')))">
-    <meta name="keyword" content="expert, meme token, solana, raydium, expert, expert mony, shitcoin, meme coin" />
+    <meta name="keyword" content="angelx, meme token, solana, raydium, angelx, angelx coin, shitcoin, meme coin" />
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://experttoken.xyz/">
+    <meta property="og:url" content="{{env('APP_URL')}}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Expert Mony">
+    <meta property="og:title" content="{{setting('speed_site_title')}}">
     <meta property="og:description"
-          content="Expert Token is a community-driven cryptocurrency designed to bring people together and make the opportunities of blockchain technology accessible to everyone. Community members benefit from contributing to the project and supporting the platform's growth.">
-    <meta property="og:image" content="https://experttoken.xyz/assets/images/avt/team-v01.png">
+          content="{{trans(setting('speed_meta_descriptions'))}}">
+    <meta property="og:image" content="{{image(setting('logo'))}}">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="experttoken.xyz">
-    <meta property="twitter:url" content="https://experttoken.xyz/">
-    <meta name="twitter:title" content="Expert Mony">
+    <meta property="twitter:domain" content="angelxcoin.com">
+    <meta property="twitter:url" content="{{env('APP_URL')}}">
+    <meta name="twitter:title" content="{{setting('speed_site_title')}}">
     <meta name="twitter:description"
-          content="Expert Token is a community-driven cryptocurrency designed to bring people together and make the opportunities of blockchain technology accessible to everyone. Community members benefit from contributing to the project and supporting the platform's growth.">
-    <meta name="twitter:image" content="https://experttoken.xyz/assets/images/avt/team-v01.png">
+          content="{{trans(setting('speed_meta_descriptions'))}}">
+    <meta name="twitter:image" content="{{image(setting('logo'))}}">
 
     <!-- Discord Meta Tags -->
     <meta name="discord:card" content="summary_large_image">
-    <meta property="discord:domain" content="experttoken.xyz">
-    <meta property="discord:url" content="https://experttoken.xyz/">
-    <meta name="discord:title" content="Expert Mony">
+    <meta property="discord:domain" content="angelxcoin.com">
+    <meta property="discord:url" content="{{env('APP_URL')}}">
+    <meta name="discord:title" content="{{setting('speed_site_title')}}">
     <meta name="discord:description"
-          content="Expert Token is a community-driven cryptocurrency designed to bring people together and make the opportunities of blockchain technology accessible to everyone. Community members benefit from contributing to the project and supporting the platform's growth.">
-    <meta name="discord:image" content="https://experttoken.xyz/assets/images/avt/team-v01.png">
+          content="{{trans(setting('speed_meta_descriptions'))}}">
+    <meta name="discord:image" content="{{image(setting('logo'))}}">
 
     <!-- Telegram Meta Tags -->
     <meta name="telegram:card" content="summary_large_image">
-    <meta property="telegram:domain" content="experttoken.xyz">
-    <meta property="telegram:url" content="https://experttoken.xyz/">
-    <meta name="telegram:title" content="Expert Mony">
+    <meta property="telegram:domain" content="angelxcoin.com">
+    <meta property="telegram:url" content="{{env('APP_URL')}}">
+    <meta name="telegram:title" content="{{setting('speed_site_title')}}">
     <meta name="telegram:description"
-          content="Expert Token is a community-driven cryptocurrency designed to bring people together and make the opportunities of blockchain technology accessible to everyone. Community members benefit from contributing to the project and supporting the platform's growth.">
-    <meta name="telegram:image" content="https://experttoken.xyz/assets/images/avt/team-v01.png">
-    <!-- Expert Meta -->
+          content="{{trans(setting('speed_meta_descriptions'))}}">
+    <meta name="telegram:image" content="{{image(setting('logo'))}}">
     <!-- Favicon -->
     @include('frontend.layouts.components.styles')
 
