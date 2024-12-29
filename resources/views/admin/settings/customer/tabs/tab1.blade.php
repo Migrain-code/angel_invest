@@ -52,7 +52,17 @@
                         <img src="{{image(setting('favicon'))}}" class="p-3" style="width: 50px; height: 50px">
                     </div>
                 </div>
-
+                <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class="required fs-6 fw-semibold mb-2">OG Image Icon (50 * 50)</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    <input type="file" class="form-control form-control-solid" placeholder="" name="og_image" value="" />
+                    <!--end::Input-->
+                    <div class="imgBox bg-dark">
+                        <img src="{{image(setting('og_image'))}}" class="p-3" style="width: 50px; height: 50px">
+                    </div>
+                </div>
                 <div class="fv-row mb-7">
                     <!--begin::Label-->
                     <label class="required fs-6 fw-semibold mb-2">Whitepaper <a target="_blank" href="{{image(setting('whitepaper_link'))}}">Görüntüle</a></label>
