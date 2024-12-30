@@ -113,6 +113,7 @@ Route::prefix('user')->as('user.')->group(function (){
 
 Auth::routes();
 
+Route::post('logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 Route::middleware('auth')->prefix('dashboard')->as('admin.')->group(function (){
     Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 

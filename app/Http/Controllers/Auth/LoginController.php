@@ -51,6 +51,14 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
+        if (auth('admin')->check()) {
+            return  to_route('admin.home');
+        }
         return view('admin.auth.login');
+    }
+
+    public function logout()
+    {
+        return to_route('home');
     }
 }

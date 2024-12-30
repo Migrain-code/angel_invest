@@ -86,7 +86,7 @@ class LoginController extends Controller
     {
         $user = Auth::guard('user')->user();
         Auth::guard('user')->logout();
-        return to_route('user.login')->with('response', [
+        return to_route('home')->with('response', [
             'status' => "success",
             'message' => $user->name. " ". trans('Oturumunuz Kapatıldı'),
         ]);
