@@ -57,7 +57,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="form-area">
-                    <form action="{{route('subscribe')}}" method="post">
+                    <form action="{{route('subscribe')}}" id="subscribe-form" method="post">
                         @csrf
                         <input type="email" name="email" placeholder="{{__('E-posta')}}" class="text-black">
                         <div class="button-area">

@@ -42,6 +42,7 @@
           content="{{trans(setting('speed_meta_descriptions'))}}">
     <meta name="telegram:image" content="{{asset('storage/'.setting('og_image'))}}">
     <!-- Favicon -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeD3KkqAAAAAB4xxYitS-IC-5-DqP_sa1epv08T"></script>
     @include('frontend.layouts.components.styles')
 
 </head>

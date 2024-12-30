@@ -74,6 +74,10 @@
 
     }
 </style>
-
+<script>
+    function onSubmit(token) {
+        document.getElementById("subscribe-form").submit();
+    }
+</script>
 
 @yield('scripts')
