@@ -51,11 +51,12 @@ class RegisterController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:customers',
             'password' => 'required|confirmed'
         ], [
             'name.required' => trans('Ad Soyad alanı zorunludur.'),
             'email.required' => trans('E-Posta alanı zorunludur.'),
+            'email.unique' => trans('E-Posta adresi sistemde kayıtlı lütfen başka bir e-posta adresi giriniz.'),
             'email.email' => trans('E-Posta adresi geçerli bir e-posta adresi olmalıdır.'),
             'password.required' => trans("Şifre alanı zorunludur."),
             'password.confirmed' => trans("Şifreler uyuşmuyor.")
