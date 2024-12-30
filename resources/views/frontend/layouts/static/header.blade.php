@@ -47,6 +47,7 @@
 
 </head>
 <body class="body body2" id="home">
+    <div id="snowflakes"></div>
 
     <div class="preloader preloader2">
         <div class="loading-container">

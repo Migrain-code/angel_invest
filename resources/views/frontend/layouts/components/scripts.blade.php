@@ -22,7 +22,56 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const snowflakeContainer = document.getElementById('snowflakes');
+    const snowflakes = [];
+    const maxSnowflakes = 100; // Maksimum kar tanesi sayısı
 
+    function createSnowflake() {
+        const snowflake = {
+            element: document.createElement('i'),
+            x: Math.random() * window.innerWidth, // X pozisyonu
+            y: -50, // Başlangıç Y pozisyonu
+            speed: Math.random() * 2 + 1, // Düşme hızı
+            sway: Math.random() * 1 - 0.5 // Yana hareket
+        };
+
+        snowflake.element.classList.add('snowflake', 'fas', 'fa-snowflake', 'text-white');
+        snowflake.element.style.left = snowflake.x + 'px';
+        snowflake.element.style.fontSize = `${Math.random() * 15 + 15}px`; // 10px-20px arası boyut
+        snowflakeContainer.appendChild(snowflake.element);
+        snowflakes.push(snowflake);
+    }
+
+    function updateSnowflakes() {
+        snowflakes.forEach((snowflake, index) => {
+            // Y ekseninde düşüş
+            snowflake.y += snowflake.speed;
+            // X ekseninde hafif sallanma
+            snowflake.x += snowflake.sway;
+
+            // Pozisyon güncelleme
+            snowflake.element.style.transform = `translate(${snowflake.x}px, ${snowflake.y}px)`;
+
+            // Ekranın altına ulaşan kar tanelerini kaldır
+            if (snowflake.y > window.innerHeight) {
+                snowflakeContainer.removeChild(snowflake.element);
+                snowflakes.splice(index, 1);
+            }
+        });
+
+        // Kar tanelerini tekrar çağır
+        while (snowflakes.length < maxSnowflakes) {
+            createSnowflake();
+        }
+
+        requestAnimationFrame(updateSnowflakes);
+    }
+
+    // Başlat
+    updateSnowflakes();
+
+</script>
 <script>
     let csrf_token = "{{csrf_token()}}";
 </script>
