@@ -17,11 +17,24 @@
 
 </head>
 <body>
+<!--*******************
+        Preloader start
+    ********************-->
+<div id="preloader">
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+</div>
+<!--*******************
+        Preloader end
+    ********************-->
+<div id="main-wrapper">
     @include('user.layouts.menu.top')
-    <div class="page-container row-fluid container-fluid">
-        <div class="page-container row-fluid container-fluid">
-        @include('user.layouts.menu.sidebar')
-            <section id="main-content" class=" ">
-                <div class="wrapper main-wrapper row" style=''>
 
+        @include('user.layouts.menu.sidebar')
+    <div class="content-body">
+
+        <div class="container-fluid">
 

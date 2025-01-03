@@ -1,30 +1,12 @@
-<!-- CORE JS FRAMEWORK - START -->
-<script src="/user/assets//js/jquery.min.js"></script>
-<script src="/user/assets//js/jquery.easing.min.js"></script>
-<script src="/user/assets//plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="/user/assets//plugins/pace/pace.min.js"></script>
-<script src="/user/assets//plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="/user/assets//plugins/viewport/viewportchecker.js"></script>
-<script>
-    window.jQuery || document.write('<script src="/user/assets//js/jquery.min.js"><\/script>');
-</script>
-<!-- CORE JS FRAMEWORK - END -->
-
-<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
-
-<script src="/user/assets//plugins/echarts/echarts-custom-for-dashboard.js"></script>
-
-<script src="/user/assets//plugins/flot-chart/jquery.flot.js"></script>
-<script src="/user/assets//plugins/flot-chart/jquery.flot.time.js"></script>
-<script src="/user/assets//js/chart-flot.js"></script>
-
-<script src="/user/assets//plugins/morris-chart/js/raphael-min.js"></script>
-<script src="/user/assets//plugins/morris-chart/js/morris.min.js"></script>
-<script src="/user/assets//js/chart-morris.js"></script>
-<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
-
-<!-- CORE TEMPLATE JS - START -->
-<script src="/user/assets//js/scripts.js"></script>
+<script src="/user/assets/vendor/global/global.min.js" type="text/javascript"></script>
+<script src="/user/assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="/user/assets/vendor/chart.js/Chart.bundle.min.js" type="text/javascript"></script>
+<script src="/user/assets/vendor/peity/jquery.peity.min.js" type="text/javascript"></script>
+<script src="/user/assets/vendor/apexchart/apexchart.js" type="text/javascript"></script>
+<script src="/user/assets/js/dashboard/dashboard-1.js" type="text/javascript"></script>
+<script src="/user/assets/vendor/owl-carousel/owl.carousel.js" type="text/javascript"></script>
+<script src="/user/assets/js/custom.js" type="text/javascript"></script>
+<script src="/user/assets/js/deznav-init.js" type="text/javascript"></script>
 <!-- END CORE TEMPLATE JS - END -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

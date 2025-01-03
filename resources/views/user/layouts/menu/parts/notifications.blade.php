@@ -1,53 +1,42 @@
-<li class="notify-toggle-wrapper noMobile">
-    <a href="#" data-toggle="dropdown" class="toggle">
-        <i class="fa fa-bell"></i>
-        <span class="badge badge-accent">{{auth('user')->user()->unreadNotifications()->count()}}</span>
-    </a>
-    <ul class="dropdown-menu notifications animated fadeIn">
-        <li class="total">
-            <span class="small">
-                You have <strong>{{auth('user')->user()->unreadNotifications()->count()}}</strong> new notifications.
-            </span>
-        </li>
-        <li class="list">
+<li class="nav-item dropdown notification_dropdown">
+    <a class="nav-link  ai-icon" href="#" role="button" data-toggle="dropdown">
+        <i class="flaticon-381-ring"></i>
+        @if(auth('user')->user()->unreadNotifications()->count() > 0)
+            <div class="pulse-css"></div>
+        @endif
 
-            <ul class="dropdown-menu-list list-unstyled ps-scrollbar">
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+        <div id="DZ_W_Notification1" class="widget-media dz-scroll p-3"
+             style="height:380px;">
+            <ul class="timeline">
                 @forelse(auth('user')->user()->unreadNotifications() as $notify)
-                    <li class="unread available notificationDetail" data-notification="{{$notify->id}}" data-title="{{$notify->getTitle()}}" data-message="{{$notify->getDescription()}}">
-                        <!-- available: success, warning, info, error -->
-                        <a href="javascript:;">
-                            <div class="notice-icon">
-                                <i class="fa fa-check"></i>
+                    <li class="notificationDetail" data-notification="{{$notify->id}}" data-title="{{$notify->getTitle()}}" data-message="{{$notify->getDescription()}}">
+                        <div class="timeline-panel">
+                            <div class="media mr-2">
+                                <img alt="image" width="50" src="{{image(auth('user')->user()->image)}}">
                             </div>
-                            <div>
-                            <span class="name">
-                                <strong>{{$notify->getTitle()}}</strong>
-                                <span class="time small">{{$notify->created_at->format('d.f.Y H:i')}}</span>
-                            </span>
+                            <div class="media-body">
+                                <h6 class="mb-1">{{$notify->getTitle()}}</h6>
+                                <small class="d-block">{{$notify->created_at->format('d.f.Y H:i')}}</small>
                             </div>
-                        </a>
+                        </div>
                     </li>
                 @empty
-                    <li class="unread available">
-                        <!-- available: success, warning, info, error -->
-                        <a href="javascript:;">
-                                <div class="text-center">
-                                    <span class="name">
-                                        <strong>{{__('Yeni Bildirim Yok')}}</strong>
-                                    </span>
-                                </div>
-                        </a>
+                    <li>
+                        <div class="timeline-panel">
+                            <div class="media-body">
+                                <h6 class="mb-1">{{__('Yeni Bildirim Yok')}}</h6>
+                            </div>
+                        </div>
+                    </li>
 
                 @endforelse
 
             </ul>
+        </div>
 
-        </li>
-
-        <li class="external">
-            <a href="{{route('user.panel.notification.index')}}">
-                <span>{{__('Tüm Bildirimler')}}</span>
-            </a>
-        </li>
-    </ul>
+        <a class="all-notification" href="{{route('user.panel.notification.index')}}">{{__('Tüm Bildirimler')}} <i
+                class="ti-arrow-right"></i></a>
+    </div>
 </li>
